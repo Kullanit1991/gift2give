@@ -22,6 +22,9 @@ Auth::routes();
 Route::get('/', function () {
     return view('home');
 });
+Route::get('/giftshop', function () {
+    return view('app.shopgrid.index');
+});
 
 // Auth::routes();
 
