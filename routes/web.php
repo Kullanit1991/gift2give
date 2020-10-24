@@ -25,6 +25,14 @@ Route::get('/', function () {
 Route::get('/giftshop', function () {
     return view('app.shopgrid.index');
 });
-
+Route::get('/contact', function () {
+    return view('app.contact.index');
+});
+Route::get('/shopping-cart', function () {
+    return view('app.shoping-cart.index');
+});
+Route::get('/check-out', function () {
+    return view('app.checkouts.index');
+});
 // Auth::routes();
 

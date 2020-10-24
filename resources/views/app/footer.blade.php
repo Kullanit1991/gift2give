@@ -6,12 +6,12 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__about__logo">
-                            <a href="./index.html"><img src="img/logo_main1.png" alt=""></a>
+                            <a href="{{ url('/') }}"><img src="img/logo_main1.png" alt=""></a>
                         </div>
                         <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello@colorlib.com</li>
+                            <li>Address: 188/97 Moo.4 BangpheeYai , Bangphee District , Samutprakarn 10540</li>
+                            <li>Phone: +6661-623-6159</li>
+                            <li>Email: gift2gives.thailand@gmail.com</li>
                         </ul>
                     </div>
                 </div>

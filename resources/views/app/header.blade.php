@@ -42,7 +42,7 @@
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
-            <a href="#"><img src="img/logo_main1.png" alt=""></a>
+            <a href="{{ url('/') }}"><img src="img/logo_main1.png" alt=""></a>
         </div>
         <div class="humberger__menu__cart">
             <ul>
@@ -67,18 +67,19 @@
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li ><a href="{{ url('/') }}">Home</a></li>
-                <li class="active"><a href="{{ url('/giftshop') }}">GiftShop</a></li>
-                {{-- <li><a href="#">Pages</a>
+                <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a></li>
+                <li class="{{ Request::is('shopgrid*') ? 'active' : '' }}"><a href="{{ url('/giftshop') }}">GiftShop</a></li>
+                <li><a href="#">Match Item</a></li>
+                <li><a href="#">Payments</a>
                     <ul class="header__menu__dropdown">
-                        <li><a href="./shop-details.html">Shop Details</a></li>
-                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                        <li><a href="./checkout.html">Check Out</a></li>
-                        <li><a href="./blog-details.html">Blog Details</a></li>
+                        {{-- <li><a href="./shop-details.html">Shop Details</a></li> --}}
+                        <li class="{{ Request::is('shopping-cart*') ? 'active' : '' }}"><a href="{{ url('/shopping-cart') }}">Shoping Cart</a></li>
+                        <li class="{{ Request::is('check-out*') ? 'active' : '' }}"><a href="{{ url('/check-out') }}">Check Out</a></li>
+                        {{-- <li><a href="./blog-details.html">Blog Details</a></li> --}}
                     </ul>
-                </li> --}}
-                <li><a href="./blog.html">Find Item</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                </li>
+                {{-- <li class="{{ Request::is('shopping-cart*') ? 'active' : '' }}"><a href="{{ url('/shopping-cart') }}">Shoping Cart</a></li> --}}
+                <li class="{{ Request::is('contact*') ? 'active' : '' }}"><a href="{{ url('/contact') }}">Contact</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -139,25 +140,26 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo_main1.png" alt=""></a>
+                        <a href="{{ url('/') }}"><img src="img/logo_main1.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li ><a href="{{ url('/') }}">Home</a></li>
-                            <li class="active"><a href="{{ url('/giftshop') }}">GiftShop</a></li>
-                            <li><a href="#">Find Item</a></li>
-                            {{-- <li><a href="#">Pages</a>
+                            <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a></li>
+                            <li class="{{ Request::is('shopgrid*') ? 'active' : '' }}"><a href="{{ url('/giftshop') }}">GiftShop</a></li>
+                            <li class="{{ Request::is('match-item*') ? 'active' : '' }}" ><a href="#">Match Item</a></li>
+                            <li><a href="#">Payments</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
+                                    {{-- <li><a href="./shop-details.html">Shop Details</a></li> --}}
+                                    <li class="{{ Request::is('shopping-cart*') ? 'active' : '' }}"><a href="{{ url('/shopping-cart') }}">Shoping Cart</a></li>
+                                    <li class="{{ Request::is('check-out*') ? 'active' : '' }}"><a href="{{ url('/check-out') }}">Check Out</a></li>
+                                    {{-- <li><a href="./blog-details.html">Blog Details</a></li> --}}
                                 </ul>
-                            </li> --}}
+                            </li>
                             {{-- <li><a href="./blog.html">Blog</a></li> --}}
-                            <li><a href="./contact.html">Contact</a></li>
+                            {{-- <li class="{{ Request::is('shopping-cart*') ? 'active' : '' }}"><a href="{{ url('/shopping-cart') }}">Shoping Cart</a></li> --}}
+                            <li  class="{{ Request::is('contact*') ? 'active' : '' }}"><a href="{{ url('/contact') }}">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -193,7 +195,7 @@
                         <ul>
                             <li>Address: 60-49 Road 11378 New York</li>
                             <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello@colorlib.com</li>
+                            <li>Email: gift2gives.thailand@gmail.com</li>
                         </ul>
                     </div>
                 </div>

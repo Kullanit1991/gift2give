@@ -32,7 +32,7 @@
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
-            <a href="#"><img src="img/logo_main1.png" alt=""></a>
+            <a href="{{ url('/') }}"><img src="img/logo_main1.png" alt=""></a>
         </div>
         <div class="humberger__menu__cart">
             <ul>
@@ -59,16 +59,17 @@
             <ul>
                 <li class="active"><a href="{{ url('/') }}">Home</a></li>
                 <li><a href="{{ url('/giftshop') }}">GiftShop</a></li>
-                {{-- <li><a href="#">Pages</a>
+                <li><a href="#">Match Item</a></li>
+                <li><a href="#">Payments</a>
                     <ul class="header__menu__dropdown">
-                        <li><a href="./shop-details.html">Shop Details</a></li>
-                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                        <li><a href="./checkout.html">Check Out</a></li>
-                        <li><a href="./blog-details.html">Blog Details</a></li>
+                        {{-- <li><a href="./shop-details.html">Shop Details</a></li> --}}
+                        <li><a href="{{ url('/shopping-cart') }}">Shoping Cart</a></li>
+                        <li><a href="{{ url('/check-out') }}">Check Out</a></li>
+                        {{-- <li><a href="./blog-details.html">Blog Details</a></li> --}}
                     </ul>
-                </li> --}}
-                <li><a href="./blog.html">Find Item</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                </li>
+                {{-- <li><a href="{{ url('/shopping-cart') }}">Shoping Cart</a></li> --}}
+                <li><a href="{{ url('/contact') }}">Contact</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -129,7 +130,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo_main1.png" alt=""></a>
+                        <a href="{{ url('/') }}"><img src="img/logo_main1.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -137,17 +138,18 @@
                         <ul>
                             <li class="active"><a href="{{ url('/') }}">Home</a></li>
                             <li><a href="{{ url('/giftshop') }}">GiftShop</a></li>
-                            <li><a href="#">Find Item</a></li>
-                            {{-- <li><a href="#">Pages</a>
+                            <li><a href="#">Match Item</a></li>
+                            <li><a href="#">Payments</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
+                                    {{-- <li><a href="./shop-details.html">Shop Details</a></li> --}}
+                                    <li><a href="{{ url('/shopping-cart') }}">Shoping Cart</a></li>
+                                    <li><a href="{{ url('/check-out') }}">Check Out</a></li>
+                                    {{-- <li><a href="./blog-details.html">Blog Details</a></li> --}}
                                 </ul>
-                            </li> --}}
+                            </li>
                             {{-- <li><a href="./blog.html">Blog</a></li> --}}
-                            <li><a href="./contact.html">Contact</a></li>
+                            {{-- <li><a href="{{ url('/Payments') }}">Shoping Cart</a></li> --}}
+                            <li><a href="{{ url('/contact') }}">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -440,7 +442,7 @@
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-1.jpg" alt="">
+                                        <img src="img/latest-product/lp-4.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>item</h6>
@@ -449,7 +451,7 @@
                                 </a>
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-2.jpg" alt="">
+                                        <img src="img/latest-product/lp-4.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>item</h6>
@@ -458,7 +460,7 @@
                                 </a>
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-3.jpg" alt="">
+                                        <img src="img/latest-product/lp-4.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>item</h6>
@@ -469,7 +471,7 @@
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-1.jpg" alt="">
+                                        <img src="img/latest-product/lp-4.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>item</h6>
@@ -478,7 +480,7 @@
                                 </a>
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-2.jpg" alt="">
+                                        <img src="img/latest-product/lp-4.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>item</h6>
@@ -487,7 +489,7 @@
                                 </a>
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-3.jpg" alt="">
+                                        <img src="img/latest-product/lp-4.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>item</h6>
@@ -505,7 +507,7 @@
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-1.jpg" alt="">
+                                        <img src="img/latest-product/lp-4.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>item</h6>
@@ -514,7 +516,7 @@
                                 </a>
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-2.jpg" alt="">
+                                        <img src="img/latest-product/lp-4.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>item</h6>
@@ -523,7 +525,7 @@
                                 </a>
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-3.jpg" alt="">
+                                        <img src="img/latest-product/lp-4.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>item</h6>
@@ -534,7 +536,7 @@
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-1.jpg" alt="">
+                                        <img src="img/latest-product/lp-4.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>item</h6>
@@ -543,7 +545,7 @@
                                 </a>
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-2.jpg" alt="">
+                                        <img src="img/latest-product/lp-4.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>item</h6>
@@ -552,7 +554,7 @@
                                 </a>
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-3.jpg" alt="">
+                                        <img src="img/latest-product/lp-4.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>item</h6>
@@ -570,7 +572,7 @@
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-1.jpg" alt="">
+                                        <img src="img/latest-product/lp-4.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>item</h6>
@@ -579,7 +581,7 @@
                                 </a>
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-2.jpg" alt="">
+                                        <img src="img/latest-product/lp-4.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>item</h6>
@@ -588,7 +590,7 @@
                                 </a>
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-3.jpg" alt="">
+                                        <img src="img/latest-product/lp-4.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>item</h6>
@@ -599,7 +601,7 @@
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-1.jpg" alt="">
+                                        <img src="img/latest-product/lp-4.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>item</h6>
@@ -608,7 +610,7 @@
                                 </a>
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-2.jpg" alt="">
+                                        <img src="img/latest-product/lp-4.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>item</h6>
@@ -617,7 +619,7 @@
                                 </a>
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-3.jpg" alt="">
+                                        <img src="img/latest-product/lp-4.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>item</h6>
@@ -701,12 +703,12 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__about__logo">
-                            <a href="./index.html"><img src="img/logo_main1.png" alt=""></a>
+                            <a href="{{ url('/') }}"><img src="img/logo_main1.png" alt=""></a>
                         </div>
                         <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello@colorlib.com</li>
+                            <li>Address: 188/97 Moo.4 BangpheeYai , Bangphee District , Samutprakarn 10540</li>
+                            <li>Phone: +6661-623-6159</li>
+                            <li>Email: gift2gives.thailand@gmail.com</li>
                         </ul>
                     </div>
                 </div>
