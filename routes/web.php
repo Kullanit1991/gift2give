@@ -20,7 +20,7 @@ Auth::routes();
 // });
 
 Route::get('/', function () {
-    return view('home');
+    return view('app.home');
 });
 Route::get('/giftshop', function () {
     return view('app.shopgrid.index');
@@ -33,6 +33,9 @@ Route::get('/shopping-cart', function () {
 });
 Route::get('/check-out', function () {
     return view('app.checkouts.index');
+});
+Route::get('/admin', function () {
+    return view('app.admin.dashboard.index');
 });
 // Auth::routes();
 

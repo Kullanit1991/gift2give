@@ -16,20 +16,20 @@
                 <div class="hero__categories">
                     <div class="hero__categories__all">
                         <i class="fa fa-bars"></i>
-                        <span>All departments</span>
+                        <span>Categorie</span>
                     </div>
                     <ul>
-                        <li><a href="#">Fresh Meat</a></li>
-                        <li><a href="#">Vegetables</a></li>
-                        <li><a href="#">Fruit & Nut Gifts</a></li>
-                        <li><a href="#">Fresh Berries</a></li>
-                        <li><a href="#">Ocean Foods</a></li>
-                        <li><a href="#">Butter & Eggs</a></li>
-                        <li><a href="#">Fastfood</a></li>
-                        <li><a href="#">Fresh Onion</a></li>
-                        <li><a href="#">Papayaya & Crisps</a></li>
-                        <li><a href="#">Oatmeal</a></li>
-                        <li><a href="#">Fresh Bananas</a></li>
+                        <li><a href="#">Father Day</a></li>
+                        <li><a href="#">Mother Day</a></li>
+                        <li><a href="#">Family Day</a></li>
+                        <li><a href="#">Aniversary Day</a></li>
+                        <li><a href="#">Birth Day</a></li>
+                        <li><a href="#">Sport Day</a></li>
+                        <li><a href="#">Farewell</a></li>
+                        <li><a href="#">Graduation</a></li>
+                        <li><a href="#">Open House Day</a></li>
+                        <li><a href="#">Re-union Day</a></li>
+                        <li><a href="#">Others</a></li>
                     </ul>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                             <i class="fa fa-phone"></i>
                         </div>
                         <div class="hero__search__phone__text">
-                            <h5>+65 11.188.888</h5>
+                            <h5>+6661-623-6159</h5>
                             <span>support 24/7 time</span>
                         </div>
                     </div>

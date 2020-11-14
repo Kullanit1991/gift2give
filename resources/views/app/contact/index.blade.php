@@ -16,20 +16,20 @@
                 <div class="hero__categories">
                     <div class="hero__categories__all">
                         <i class="fa fa-bars"></i>
-                        <span>All departments</span>
+                        <span>Categorie</span>
                     </div>
                     <ul>
-                        <li><a href="#">Fresh Meat</a></li>
-                        <li><a href="#">Vegetables</a></li>
-                        <li><a href="#">Fruit & Nut Gifts</a></li>
-                        <li><a href="#">Fresh Berries</a></li>
-                        <li><a href="#">Ocean Foods</a></li>
-                        <li><a href="#">Butter & Eggs</a></li>
-                        <li><a href="#">Fastfood</a></li>
-                        <li><a href="#">Fresh Onion</a></li>
-                        <li><a href="#">Papayaya & Crisps</a></li>
-                        <li><a href="#">Oatmeal</a></li>
-                        <li><a href="#">Fresh Bananas</a></li>
+                        <li><a href="#">Father Day</a></li>
+                        <li><a href="#">Mother Day</a></li>
+                        <li><a href="#">Family Day</a></li>
+                        <li><a href="#">Aniversary Day</a></li>
+                        <li><a href="#">Birth Day</a></li>
+                        <li><a href="#">Sport Day</a></li>
+                        <li><a href="#">Farewell</a></li>
+                        <li><a href="#">Graduation</a></li>
+                        <li><a href="#">Open House Day</a></li>
+                        <li><a href="#">Re-union Day</a></li>
+                        <li><a href="#">Others</a></li>
                     </ul>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                             <i class="fa fa-phone"></i>
                         </div>
                         <div class="hero__search__phone__text">
-                            <h5>+65 11.188.888</h5>
+                            <h5>+6661-623-6159</h5>
                             <span>support 24/7 time</span>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                 <div class="breadcrumb__text">
                     <h2>Contact Us</h2>
                     <div class="breadcrumb__option">
-                        <a href="./index.html">Home</a>
+                        <a href="{{ url('/') }}">Home</a>
                         <span>Contact Us</span>
                     </div>
                 </div>
@@ -87,14 +87,14 @@
                 <div class="contact__widget">
                     <span class="icon_phone"></span>
                     <h4>Phone</h4>
-                    <p>+01-3-8888-6868</p>
+                    <p>+6661-623-6159</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 text-center">
                 <div class="contact__widget">
                     <span class="icon_pin_alt"></span>
                     <h4>Address</h4>
-                    <p>60-49 Road 11378 New York</p>
+                    <p>188/97 Moo.4 BangpheeYai , Bangphee District , Samutprakarn 10540</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 text-center">
@@ -108,7 +108,7 @@
                 <div class="contact__widget">
                     <span class="icon_mail_alt"></span>
                     <h4>Email</h4>
-                    <p>hello@colorlib.com</p>
+                    <p>gift2gives.thailand@gmail.com</p>
                 </div>
             </div>
         </div>
@@ -124,10 +124,10 @@
     <div class="map-inside">
         <i class="icon_pin"></i>
         <div class="inside-widget">
-            <h4>New York</h4>
+            <h4>Gifts2Gives</h4>
             <ul>
-                <li>Phone: +12-345-6789</li>
-                <li>Add: 16 Creek Ave. Farmingdale, NY</li>
+                <li>Phone: +6661-623-6159</li>
+                <li>Add: 188/97 Moo.4 BangpheeYai , Bangphee District , Samutprakarn 10540</li>
             </ul>
         </div>
     </div>

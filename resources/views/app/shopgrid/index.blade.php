@@ -16,7 +16,7 @@
                 <div class="hero__categories">
                     <div class="hero__categories__all">
                         <i class="fa fa-bars"></i>
-                        <span>All departments</span>
+                        <span>Categorie</span>
                     </div>
                     <ul>
                         <li><a href="#">Father Day</a></li>
@@ -50,7 +50,7 @@
                             <i class="fa fa-phone"></i>
                         </div>
                         <div class="hero__search__phone__text">
-                            <h5>+65 11.188.888</h5>
+                            <h5>+6661-623-6159</h5>
                             <span>support 24/7 time</span>
                         </div>
                     </div>
