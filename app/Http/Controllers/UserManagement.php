@@ -14,4 +14,18 @@ class UserManagement extends Controller
 
         return view('app.admin.manage-user.index', ['user' => $user]);
     }
+
+
+    public function store(Request $request)
+    {
+
+       
+        // return view('app.admin.manage-user.index', ['user' => $user]);
+    }
+
+
+    public function edit(Request $request)
+    {
+        return view('app.admin.manage-user.edit');
+    }
 }

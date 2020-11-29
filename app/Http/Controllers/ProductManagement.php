@@ -10,7 +10,7 @@ class ProductManagement extends Controller
     public function index()
     {
 
-        $goods = DB::table('goods')->get();
+        $goods = DB::table('products')->get();
 
         return view('app.admin.manage-products.index', ['goods' => $goods]);
     }

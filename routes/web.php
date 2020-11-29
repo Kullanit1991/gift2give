@@ -49,7 +49,10 @@ Route::get('setting-menu', [App\Http\Controllers\MenuManagement::class, 'index']
 
 Route::get('setting-user', [App\Http\Controllers\UserManagement::class, 'index'])->middleware('is_admin');
 
+Route::get('setting-user-edit', [App\Http\Controllers\UserManagement::class, 'edit'])->middleware('is_admin');
+
 Route::get('product',  [App\Http\Controllers\ProductManagement::class, 'index'])->middleware('is_admin');
 
+Route::get('top-sale',  [App\Http\Controllers\TopSaleController::class, 'index'])->middleware('is_admin');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

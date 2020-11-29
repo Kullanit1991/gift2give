@@ -174,7 +174,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="{{url('admin')}}" class="nav-link active">
+                    <a href="{{url('admin')}}" class="nav-link {{ (request()->is('admin')) ? 'active' : '' }}">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
                         Dashboard
@@ -182,9 +182,16 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{url('product')}}" class="nav-link">
+                    <a href="{{url('product')}}" class="nav-link {{ (request()->is('product')) ? 'active' : '' }}">
                     <p>
                         Product Management
+                    </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{url('top-sale')}}" class="nav-link {{ (request()->is('top-sale')) ? 'active' : '' }}">
+                    <p>
+                        Top Sale Management
                     </p>
                     </a>
                 </li>
@@ -197,7 +204,7 @@
                 </li> --}}
                 <li class="nav-header">SETTING</li>
                 <li class="nav-item">
-                <a href="{{url('setting-menu')}}" class="nav-link">
+                <a href="{{url('setting-menu')}}" class="nav-link {{ (request()->is('setting-menu')) ? 'active' : '' }}">
                     <i class="nav-icon fas fa-th"></i>
                     <p>
                         Menus
@@ -205,7 +212,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{url('setting-user')}}" class="nav-link">
+                    <a href="{{url('setting-user')}}" class="nav-link {{ (request()->is('setting-user')) ? 'active' : '' }}">
                     <i class="nav-icon fas fa-users-cog"></i>
                     <p>
                         User
