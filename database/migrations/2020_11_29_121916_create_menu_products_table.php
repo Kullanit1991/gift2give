@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTopSaleTypeTable extends Migration
+class CreateMenuProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateTopSaleTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('top_sale_type', function (Blueprint $table) {
+        Schema::create('menu_products', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->char('status', 1)->nullable();
+            $table->tinyInteger('menu_id');
+            $table->tinyInteger('sub_menu_id');
+            $table->tinyInteger('product_id');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateTopSaleTypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('top_sale_type');
+        Schema::dropIfExists('menu_products');
     }
 }

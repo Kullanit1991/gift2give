@@ -52,8 +52,8 @@
                         <li><a href="#" data-toggle="modal" data-target=""><i class="fa fa-user" aria-hidden="true"></i>
                                 Hello! {{ Auth::user()->name }}</a></li>
                         <li> <a href="#" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                              document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"
-                                    aria-hidden="true"></i> {{ __('Logout') }} </a>
+                                                  document.getElementById('logout-form').submit();"><i
+                                    class="fa fa-sign-out" aria-hidden="true"></i> {{ __('Logout') }} </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
@@ -128,41 +128,86 @@
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav menu__list">
-                                    <li class="menu__item {{ (request()->is('/')) ? 'active menu__item--current' : '' }}"><a class="menu__link"
-                                            href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a></li>
-                                    <li class=" menu__item {{ (request()->is('about')) ? 'active menu__item--current' : '' }}"><a class="menu__link" href="{{ url('/about') }}">About</a>
+                                    <li class="menu__item {{ request()->is('/') ? 'active menu__item--current' : '' }}">
+                                        <a class="menu__link" href="{{ url('/') }}">Home <span
+                                                class="sr-only">(current)</span></a></li>
+                                    <li
+                                        class=" menu__item {{ request()->is('about') ? 'active menu__item--current' : '' }}">
+                                        <a class="menu__link" href="{{ url('/about') }}">About</a>
                                     </li>
-                                    <li class="dropdown menu__item">
-                                        <a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown"
-                                            role="button" aria-haspopup="true" aria-expanded="false">Men <span
-                                                class="caret"></span></a>
-                                        <ul class="dropdown-menu multi-column columns-3">
-                                            <div class="agile_inner_drop_nav_info">
-                                                <div class="col-sm-6 multi-gd-img1 multi-gd-text ">
-                                                    <a href="#"><img src="images/mens.jpg" alt=" " /></a>
-                                                </div>
-                                                <div class="col-sm-3 multi-gd-img">
-                                                    <ul class="multi-column-dropdown">
-                                                        <li><a href="#">Gifts for Boyfriend</a></li>
-                                                        <li><a href="#">Gifts for Husband</a></li>
-                                                        <li><a href="#">Gifts for Dad</a></li>
-                                                        <li><a href="#">Gifts for Grandpa</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-sm-3 multi-gd-img">
-                                                    <ul class="multi-column-dropdown">
-                                                        <li><a href="#">Christmas Gifts</a></li>
-                                                        <li><a href="#">Anniversary</a></li>
-                                                        <li><a href="#">Birthday Gifts</a></li>
-                                                        <li><a href="#">Wedding Gifts</a></li>
-                                                        <li><a href="#">Graduation Gifts</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown menu__item">
+                                    @if (count($response) > 0)
+                                     
+                                        @foreach ($response as $item)
+
+                                        @if ($item->id != 4)
+                                            
+                                      
+                                            <li class="dropdown menu__item">
+                                                <a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown"
+                                                    role="button" aria-haspopup="true" aria-expanded="false">{{$item->menu_name}} <span
+                                                        class="caret"></span></a>
+                                                <ul class="dropdown-menu multi-column columns-3">
+                                                    <div class="agile_inner_drop_nav_info">
+                                                        <div class="col-sm-6 multi-gd-img1 multi-gd-text ">
+                                                    
+                                                            @if ($item->id == 1)
+                                                            <a href="#"><img src="images/mens.jpg" alt=" " /></a>
+                                                            @elseif($item->id == 2)
+                                                            <a href="#"><img src="images/top1.jpg" alt=" " /></a>
+                                                            @elseif($item->id == 3)
+                                                            <a href="#"><img src="images/kids.jpeg" alt=" " /></a>
+                                                            @endif
+                                           
+                                                        </div>
+                                                        <div class="col-sm-3 multi-gd-img">
+                                                            <ul class="multi-column-dropdown">
+                                                                <?php 
+                                                                    foreach ( $item->submenu as $key => $value) {
+                                                                        # code...
+                                                                        if($key < 5){
+                                                                    ?>
+                                                                <li><a href="#">{{ $value->submenu_name }}</a></li>
+
+                                                                <?php } } ?>
+                                                            </ul>
+                                                        </div>
+                                                        <?php 
+                                                       if(count($item->submenu) > 5) {
+                                                        foreach ( $item->submenu as $key => $value) {
+                                                                        # code...
+                                                                        if($key >= 5){
+                                                        ?>
+                                                        <div class="col-sm-3 multi-gd-img">
+                                                            <ul class="multi-column-dropdown">
+                                                                <li><a href="#">{{ $value->submenu_name }}</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <?php 
+                                                                        }
+                                                       }
+                                                       }
+                                                        
+                                                         ?>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </ul>
+                                            </li>
+                                            @else
+                                            <li class="menu__item dropdown">
+                                                <a class="menu__link" href="#" class="dropdown-toggle"
+                                                    data-toggle="dropdown">{{$item->menu_name}} <b class="caret"></b></a>
+                                                <ul class="dropdown-menu agile_short_dropdown">
+                                                    @foreach ($item->submenu as $key => $value)
+                                                    <li><a href="#">{{  $value->submenu_name }}</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                            @endif
+                                        @endforeach
+
+                                    @endif
+
+                                    {{-- <li class="dropdown menu__item">
                                         <a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown"
                                             role="button" aria-haspopup="true" aria-expanded="false">Women <span
                                                 class="caret"></span></a>
@@ -220,8 +265,8 @@
                                                 <div class="clearfix"></div>
                                             </div>
                                         </ul>
-                                    </li>
-                                    <li class="menu__item dropdown">
+                                    </li> --}}
+                                    {{-- <li class="menu__item dropdown">
                                         <a class="menu__link" href="#" class="dropdown-toggle"
                                             data-toggle="dropdown">Categories <b class="caret"></b></a>
                                         <ul class="dropdown-menu agile_short_dropdown">
@@ -229,9 +274,10 @@
                                             <li><a href="typography.html">Anniversary</a></li>
                                             <li><a href="typography.html">Wedding</a></li>
                                         </ul>
-                                    </li>
-                                    <li class=" menu__item {{ (request()->is('contact')) ? 'active menu__item--current' : '' }}"><a class="menu__link"
-                                            href="{{ url('/contact') }}">Contact</a>
+                                    </li> --}}
+                                    <li
+                                        class=" menu__item {{ request()->is('contact') ? 'active menu__item--current' : '' }}">
+                                        <a class="menu__link" href="{{ url('/contact') }}">Contact</a>
                                     </li>
                                 </ul>
                             </div>
@@ -342,7 +388,8 @@
                         <form action="{{ route('register') }}" method="post">
                             @csrf
                             <div class="styled-input agile-styled-input-top">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
+                                    name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -352,7 +399,8 @@
                                 <label>Name</label>
                             </div>
                             <div class="styled-input">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                                    name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -362,7 +410,9 @@
                                 <label>Email</label>
                             </div>
                             <div class="styled-input">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password"
+                                    class="form-control @error('password') is-invalid @enderror" name="password"
+                                    required autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -372,7 +422,8 @@
                                 <label>Password</label>
                             </div>
                             <div class="styled-input">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control"
+                                    name="password_confirmation" required autocomplete="new-password">
                                 <label>Confirm Password</label>
                                 <span></span>
                             </div>

@@ -42,31 +42,33 @@
                                     <th>status</th>
                                     <th width="100px">Action</th>
                                 </tr>
-                               <?php
-                                    foreach ($user as $key => $value) {
 
-                               ?>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($user as $key => $value) { ?>
                                 <tr>
-                                    <td>{{ $key + 1}}</td>
+                                    <td>{{  $user->firstItem() + $key }}</td>
                                     <td>{{ $value->name }}</td>
                                     <td>{{ $value->email }}</td>
                                     <td>
                                         @if ($value->status == 'Y')
-                                        <span style="color: green; font-weight: bold;">Active</span>
+                                            <span style="color: green; font-weight: bold;">Active</span>
                                         @else
-                                        <span style="color: red; font-weight: bold;">In Active</span>
+                                            <span style="color: red; font-weight: bold;">In Active</span>
                                         @endif
                                     </td>
                                     <td><button type="button" class="btn btn-secondary">Edit</button></td>
                                 </tr>
-                                <?php
-                                    }
-                                ?>
-                            </thead>
-                            <tbody>
+                                <?php } ?>
                             </tbody>
                         </table>
-
+                        <br />
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-4"></div>
+                                <div class="col-sm-8">{{ $user->links('pagination::bootstrap-4') }}</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

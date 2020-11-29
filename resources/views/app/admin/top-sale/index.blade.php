@@ -35,45 +35,172 @@
                     <div class="card-header">
                         <ul class="nav nav-tabs card-header-tabs">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#tab1">Top Sale Type</a>
+                                <a class="nav-link {{ !isset($_GET['tab']) ? 'active' : '' }}" data-toggle="tab" role="tab" href="#tab1">Top Sale Categories</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#tab2">Top Sale Management</a>
+                                <a class="nav-link {{ isset($_GET['tab']) ? 'active' : '' }}" data-toggle="tab" role="tab" href="#tab2">Top Sale Lists</a>
                             </li>
+
                         </ul>
                     </div>
-                    <div id="tab1" class="card-body">
-                        <table class="table table-bordered data-table">
-                            <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Type Name</th>
-                                    <th>Detail</th>
-                                    <th>status</th>
-                                    <th width="100px">Action</th>
-                                </tr>
-                                <?php if (count($goods) > 0) {
-                                foreach ($goods as $key => $value) { ?>
-                                <tr>
-                                    <td>{{ $key + 1 }}</td>
-                                    <td>{{ $value->name }}</td>
-                                    <td>{{ $value->email }}</td>
-                                    <td>Active</td>
-                                    <td></td>
-                                </tr>
-                                <?php }
-                                } else {
-                                ?>
-                                <tr >
-                                    <td colspan="5">No data</td>
-                                </tr>
+                    <div class="card-body">
 
-                                <?php
-                                } ?>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
+                        <div class="tab-content">
+                            <div class="tab-pane {{ !isset($_GET['tab']) ? 'fade show active' : '' }} " id="tab1" role="tabpanel">
+
+                                <div class="container">
+                                    <div class="row justify-content-md-center">
+                                        <div class="col col-lg-2">
+                                        </div>
+                                        <div class="col-md-auto">
+                                        </div>
+                                        <div class="col col-lg-2">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                        </div>
+                                        <div class="col-md-auto">
+                                        </div>
+                                        <div class="col col-lg-2">
+                                          <?php if (count($type) < 4) { ?>
+                                            <a href="{{ url('top-sale-add-type') }}" class="btn btn-primary" ><i
+                                                    class="fa fa-plus-circle" aria-hidden="true"></i> Add</a>
+                                            <?php } ?>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <table class="table table-bordered data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Top Sale Categorie</th>
+                                            <th>Status</th>
+                                            <th width="150px">Action</th>
+                                        </tr>
+
+                                    </thead>
+                                    <tbody>
+                                        <?php if (count($type) > 0) {
+                                        foreach ($type as $key => $value) { ?>
+                                        <tr>
+                                            <td>{{ $key + 1 }}</td>
+                                            <td>{{ $value->name }}</td>
+                                            <td>
+                                                @if ($value->status == 'Y')
+                                                    <span style="color: green; font-weight: bold;">Active</span>
+                                                @else
+                                                    <span style="color: red; font-weight: bold;">In Active</span>
+                                                @endif
+                                            </td>
+                                            <td><button type="button" class="btn btn-secondary">Edit</button>
+                                              <button type="button" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                                        </tr>
+                                        <?php }
+                                        } else {
+                                        ?>
+                                        <tr>
+                                            <td colspan="4">No data</td>
+                                        </tr>
+
+                                        <?php
+                                        } ?>
+                                    </tbody>
+                                </table>
+                               
+
+                                {{-- <br />
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-4"></div>
+                                        <div class="col-sm-8"> {{ $menu->links('pagination::bootstrap-4') }}</div>
+                                    </div>
+                                </div> --}}
+
+                            </div>
+                            <div class="tab-pane {{ isset($_GET['tab']) ? 'fade show active' : '' }}" id="tab2" role="tabpanel">
+
+                                <div class="container">
+                                    <div class="row justify-content-md-center">
+                                        <div class="col col-lg-2">
+                                        </div>
+                                        <div class="col-md-auto">
+                                        </div>
+                                        <div class="col col-lg-2">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                        </div>
+                                        <div class="col-md-auto">
+                                        </div>
+                                        <div class="col col-lg-2">
+                                            <a href="{{ url('top-sale-add') }}" class="btn btn-primary"><i
+                                                    class="fa fa-plus-circle" aria-hidden="true"></i> Add</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <table class="table table-bordered data-table">
+                                    <thead>
+                                        <tr>
+                                            <th width="250px"></th>
+                                            <th>Categories</th>
+                                            <th>Name</th>
+                                            <th>Desc</th>
+                                            <th>Price</th>
+                                            <th>Special Price</th>
+                                            <th>status</th>
+                                            <th width="150px">Action</th>
+                                        </tr>
+
+                                    </thead>
+                                    <tbody>
+                                        <?php if (count($goods) > 0) {
+                                        foreach ($goods as $key => $value) { ?>
+                                        <tr>
+                                            <td><img src="product_img/{{ $value->product_photo_path }}" width="50%" /></td>
+                                            <td>{{ $value->type_name }}</td>
+                                            <td>{{ $value->name }}</td>
+                                            <td>{{ $value->description }}</td>
+                                            <td>{{ $value->price }}</td>
+                                            <td>{{ $value->sale_price }}</td>
+                                            <td>
+                                                @if ($value->status == 'Y')
+                                                    <span style="color: green; font-weight: bold;">Active</span>
+                                                @else
+                                                    <span style="color: red; font-weight: bold;">In Active</span>
+                                                @endif
+                                            </td>
+                                            <td><button type="button" class="btn btn-secondary">Edit</button>
+                                                <button type="button" class="btn btn-danger"><i class="fa fa-trash"
+                                                        aria-hidden="true"></i></button>
+                                            </td>
+                                        </tr>
+                                        <?php }
+                                        } else {
+                                        ?>
+                                        <tr>
+                                            <td colspan="7">No data</td>
+                                        </tr>
+
+                                        <?php
+                                        } ?>
+                                    </tbody>
+                                </table>
+                                <br />
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-4"></div>
+                                        <div class="col-sm-8">{{ $goods->appends(['tab' => '2'])->links('pagination::bootstrap-4') }}</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
