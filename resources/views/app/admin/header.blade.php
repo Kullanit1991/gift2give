@@ -33,11 +33,11 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="index3.html" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Home</a>
             </li>
-            <li class="nav-item d-none d-sm-inline-block">
+            {{-- <li class="nav-item d-none d-sm-inline-block">
                 <a href="#" class="nav-link">Contact</a>
-            </li>
+            </li> --}}
             </ul>
 
             <!-- SEARCH FORM -->
@@ -55,7 +55,7 @@
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
             <!-- Messages Dropdown Menu -->
-            <li class="nav-item dropdown">
+            {{-- <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
                 <i class="far fa-comments"></i>
                 <span class="badge badge-danger navbar-badge">3</span>
@@ -138,11 +138,11 @@
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                 </div>
-            </li>
-            <li class="nav-item">
+            </li> --}}
+            {{-- <li class="nav-item">
                 <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i
                     class="fas fa-th-large"></i></a>
-            </li>
+            </li> --}}
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -174,7 +174,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
+                    <a href="{{url('admin')}}" class="nav-link active">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
                         Dashboard
@@ -182,29 +182,22 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{url('product')}}" class="nav-link">
                     <p>
                         Product Management
                     </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                    <p>
-                        Department Management
-                    </p>
-                    </a>
-                </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="#" class="nav-link">
                     <p>
                         Email
                     </p>
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-header">SETTING</li>
                 <li class="nav-item">
-                    <a href="pages/widgets.html" class="nav-link">
+                <a href="{{url('setting-menu')}}" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
                     <p>
                         Menus
@@ -212,22 +205,26 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="pages/widgets.html" class="nav-link">
+                    <a href="{{url('setting-user')}}" class="nav-link">
                     <i class="nav-icon fas fa-users-cog"></i>
                     <p>
                         User
                     </p>
                     </a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a href="pages/widgets.html" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
+                <li class="nav-header"></li>
+                <li class="nav-item">
+                <a href="{{ route('logout') }}"
+                onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="nav-link">
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+                    <i class="nav-icon fas fa-sign-out-alt"></i>
                     <p>
-                        Widgets
-                        <span class="right badge badge-danger">New</span>
+                        Log out
                     </p>
                     </a>
-                </li> --}}
+                </li>
                 {{-- <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-copy"></i>

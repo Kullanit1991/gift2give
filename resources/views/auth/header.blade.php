@@ -7,25 +7,19 @@
     <title>Gift2Gives</title>
 
    <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-    <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
-    <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="{{ asset('fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
-    <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="{{ asset('vendor/animate/animate.css') }}">
-    <!--===============================================================================================-->	
-        <link rel="stylesheet" type="text/css" href="{{ asset('vendor/css-hamburgers/hamburgers.min.css') }}">
-    <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="{{ asset('vendor/animsition/css/animsition.min.css') }}">
-    <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="{{ asset('vendor/select2/select2.min.css') }}">
-    <!--===============================================================================================-->	
-        <link rel="stylesheet" type="text/css" href="{{ asset('vendor/daterangepicker/daterangepicker.css') }}">
-    <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/util.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
-    <!--===============================================================================================-->
+	<link rel="icon" type="img/logo_main1.png" href="images/icons/favicon.ico"/>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- Include the above in your HEAD tag -->
+    
+    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     @yield('style')
 
 </head>

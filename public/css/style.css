@@ -555,17 +555,17 @@ a.simpleCart_empty {
 }
 /*-- banner --*/  
 .carousel .item{    
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat;
-	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat;
-	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat; 
-	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat;
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/Christmas_Gifts1.jpg) no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/Christmas_Gifts1.jpg) no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/Christmas_Gifts1.jpg) no-repeat; 
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/Christmas_Gifts1.jpg) no-repeat;
 	background-size:cover;	 
 }
 .carousel .item.item2{   
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat;
-	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat;
-	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat; 
-	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat;
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/New_Year_banner.jpg) no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/New_Year_banner.jpg) no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/New_Year_banner.jpg) no-repeat; 
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/New_Year_banner.jpg) no-repeat;
 	background-size:cover;	
 }   
 .carousel .item.item3{   
@@ -688,12 +688,12 @@ a.simpleCart_empty {
 	height: 100%;
 }
 
-.grid figure h3 {
+.grid figure h1 {
 	word-spacing: -0.15em;
 	font-weight: 300;
 }
 
-.grid figure h3 span {
+.grid figure h1 span {
 	font-weight: 800;
     color: #e71f30;
 }
@@ -745,11 +745,12 @@ figure.effect-roxy figcaption {
     border: 13px solid rgba(255, 255, 255, 0.15);
 }
 
-figure.effect-roxy h3 {
+figure.effect-roxy h1 {
     padding: 1.5em 0 .5em;
-    font-size: 1.7em;
+    font-size: 3.7em;
     color: #fff;
-    text-transform: uppercase;
+	text-transform: uppercase;
+	font-weight: bold;
     letter-spacing: 5px;
 }
 figure.effect-roxy p {
@@ -963,7 +964,7 @@ color: #2fdab8;
     padding: 1em 0em 0 0em;
 }
 .contact-form {
-    background: #181919;
+    background: #FB3F4E;
     padding: 5em 3em;
 }
 .contact input[type="text"], .contact input[type="email"], .contact textarea {
@@ -1650,7 +1651,7 @@ a.single-item{
 }
 /*-- /sale --*/
    .sale-w3ls {
-    background: url(../images/banner3.jpg)no-repeat 0px 0px;
+    background: url(../images/banner-3.jpg)no-repeat 0px 0px;
     background-attachment: fixed;
     background-size: cover;
 	-webkit-background-size: cover;
@@ -1678,7 +1679,7 @@ a.single-item{
     margin-top: 2em;
 }
 .sale-w3ls h6 span {
-    color: #080808;
+    color:#cddc39;
 }
 /*-- //sale --*/
 /*-- login --*/
@@ -1868,7 +1869,7 @@ color: #545454;
   box-shadow: 0 0 1px transparent;
   position: relative;
   overflow: hidden;
-  background: #111;
+  background: #FB3F4E;
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
@@ -1902,7 +1903,7 @@ color: #545454;
 /*-- //coupons --*/
 /*-- /about --*/
 .page-head_agile_info_w3l {
-    background: url(../images/inner1.jpg) no-repeat center;
+    background: url(../images/inner-banner.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -1994,7 +1995,7 @@ h3.tittle {
     font-size: 33px;
 }
 .contact-grid-agile-w3 {
-    background: #171616;
+    background: #FB3F4E;
     text-align: center;
     width: 32%;
     padding: 2em 1em;

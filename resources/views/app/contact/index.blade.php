@@ -8,159 +8,177 @@
 @stop
 
 @section('content')
- <!-- Hero Section Begin -->
- <section class="hero hero-normal">
+<!-- /banner_bottom_agile_info -->
+<div class="page-head_agile_info_w3l">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="hero__categories">
-                    <div class="hero__categories__all">
-                        <i class="fa fa-bars"></i>
-                        <span>Categorie</span>
-                    </div>
-                    <ul>
-                        <li><a href="#">Father Day</a></li>
-                        <li><a href="#">Mother Day</a></li>
-                        <li><a href="#">Family Day</a></li>
-                        <li><a href="#">Aniversary Day</a></li>
-                        <li><a href="#">Birth Day</a></li>
-                        <li><a href="#">Sport Day</a></li>
-                        <li><a href="#">Farewell</a></li>
-                        <li><a href="#">Graduation</a></li>
-                        <li><a href="#">Open House Day</a></li>
-                        <li><a href="#">Re-union Day</a></li>
-                        <li><a href="#">Others</a></li>
-                    </ul>
-                </div>
+        <h3>C<span>ontact Us </span></h3>
+        <!--/w3_short-->
+             <div class="services-breadcrumb">
+                    <div class="agile_inner_breadcrumb">
+
+                       <ul class="w3_short">
+                            <li><a href="index.html">Home</a><i>|</i></li>
+                            <li>Contact</li>
+                        </ul>
+                     </div>
             </div>
-            <div class="col-lg-9">
-                <div class="hero__search">
-                    <div class="hero__search__form">
-                        <form action="#">
-                            <div class="hero__search__categories">
-                                All Categories
-                                <span class="arrow_carrot-down"></span>
+   <!--//w3_short-->
+</div>
+</div>
+<!--/contact-->
+<div class="banner_bottom_agile_info">
+    <div class="container">
+      <div class="contact-grid-agile-w3s">
+            <div class="col-md-4 contact-grid-agile-w3">
+                    <div class="contact-grid-agile-w31">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <h4>Address</h4>
+                        <p>188/97 Moo.4 , BangPheeYai , BangPhee<span>Samutprakran, Thailand.</span></p>
+                    </div>
+                </div>
+                <div class="col-md-4 contact-grid-agile-w3">
+                    <div class="contact-grid-agile-w32">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <h4>Call Us</h4>
+                        <p>+1234 758 839<span>+1273 748 730</span></p>
+                    </div>
+                </div>
+                <div class="col-md-4 contact-grid-agile-w3">
+                    <div class="contact-grid-agile-w33">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <h4>Email</h4>
+                        <p><a href="mailto:info@example.com">gift2gives.thailand@gmail.com</a><span><a href="mailto:info@example.com">admin@gift2gives.com</a></span></p>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+   </div>
+ </div>
+   <div class="contact-w3-agile1 map" data-aos="flip-right">
+        
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d175472.62527668144!2d100.66600035455151!3d13.631352603829026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d5c1f8a37d4ab%3A0x3019237450c50d0!2z4Lit4Liz4LmA4Lig4Lit4Lia4Liy4LiH4Lie4Lil4Li1IOC4quC4oeC4uOC4l-C4o-C4m-C4o-C4suC4geC4suC4ow!5e0!3m2!1sth!2sth!4v1606324891874!5m2!1sth!2sth" class="map" style="border:0" allowfullscreen=""></iframe>
+   </div>
+<div class="banner_bottom_agile_info">
+<div class="container">
+   <div class="agile-contact-grids">
+            <div class="agile-contact-left">
+                <div class="col-md-6 address-grid">
+                    <h4>For More <span>Information</span></h4>
+                        <div class="mail-agileits-w3layouts">
+                            <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                            <div class="contact-right">
+                                <p>Telephone </p><span>+1 (100)222-23-33</span>
                             </div>
-                            <input type="text" placeholder="What do yo u need?">
-                            <button type="submit" class="site-btn">SEARCH</button>
-                        </form>
-                    </div>
-                    <div class="hero__search__phone">
-                        <div class="hero__search__phone__icon">
-                            <i class="fa fa-phone"></i>
+                            <div class="clearfix"> </div>
                         </div>
-                        <div class="hero__search__phone__text">
-                            <h5>+6661-623-6159</h5>
-                            <span>support 24/7 time</span>
+                        <div class="mail-agileits-w3layouts">
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            <div class="contact-right">
+                                <p>Mail </p><a href="mailto:info@example.com">gift2gives.thailand@gmail.com</a>
+                            </div>
+                            <div class="clearfix"> </div>
                         </div>
-                    </div>
+                        <div class="mail-agileits-w3layouts">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <div class="contact-right">
+                                <p>Location</p><span>188/97 Moo.4, Samutprakran, Thailand.</span>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <ul class="social-nav model-3d-0 footer-social w3_agile_social two contact">
+                                                      <li class="share">SHARE ON : </li>
+                                                        <li><a href="#" class="facebook">
+                                                              <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                                                              <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
+                                                        <li><a href="#" class="twitter"> 
+                                                              <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                                                              <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
+                                                        <li><a href="#" class="instagram">
+                                                              <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                                              <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
+                                                        <li><a href="#" class="pinterest">
+                                                              <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                                              <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
+                                                    </ul>
+                </div>
+                <div class="col-md-6 contact-form">
+                    <h4 class="white-w3ls">Contact <span>Form</span></h4>
+                    <form action="#" method="post">
+                        <div class="styled-input agile-styled-input-top">
+                            <input type="text" name="Name" required="">
+                            <label>Name</label>
+                            <span></span>
+                        </div>
+                        <div class="styled-input">
+                            <input type="email" name="Email" required=""> 
+                            <label>Email</label>
+                            <span></span>
+                        </div> 
+                        <div class="styled-input">
+                            <input type="text" name="Subject" required="">
+                            <label>Subject</label>
+                            <span></span>
+                        </div>
+                        <div class="styled-input">
+                            <textarea name="Message" required=""></textarea>
+                            <label>Message</label>
+                            <span></span>
+                        </div>	 
+                        <input type="submit" value="SEND">
+                    </form>
                 </div>
             </div>
+            <div class="clearfix"> </div>
         </div>
-    </div>
-</section>
-<!-- Hero Section End -->
+   </div>
+</div>
+<!--//contact-->
+<!--/grids-->
+<div class="coupons">
+    <div class="coupons-grids text-center">
+        <div class="w3layouts_mail_grid">
+            <div class="col-md-3 w3layouts_mail_grid_left">
+                <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                    <i class="fa fa-truck" aria-hidden="true"></i>
+                </div>
+                <div class="w3layouts_mail_grid_left2">
+                    <h3>FREE SHIPPING</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur</p>
+                </div>
+            </div>
+            <div class="col-md-3 w3layouts_mail_grid_left">
+                <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                    <i class="fa fa-headphones" aria-hidden="true"></i>
+                </div>
+                <div class="w3layouts_mail_grid_left2">
+                    <h3>24/7 SUPPORT</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur</p>
+                </div>
+            </div>
+            <div class="col-md-3 w3layouts_mail_grid_left">
+                <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </div>
+                <div class="w3layouts_mail_grid_left2">
+                    <h3>MONEY BACK GUARANTEE</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur</p>
+                </div>
+            </div>
+                <div class="col-md-3 w3layouts_mail_grid_left">
+                <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                    <i class="fa fa-gift" aria-hidden="true"></i>
+                </div>
+                <div class="w3layouts_mail_grid_left2">
+                    <h3>FREE GIFT COUPONS</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur</p>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
 
-<!-- Breadcrumb Section Begin -->
-<section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <div class="breadcrumb__text">
-                    <h2>Contact Us</h2>
-                    <div class="breadcrumb__option">
-                        <a href="{{ url('/') }}">Home</a>
-                        <span>Contact Us</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Breadcrumb Section End -->
-
-<!-- Contact Section Begin -->
-<section class="contact spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-6 text-center">
-                <div class="contact__widget">
-                    <span class="icon_phone"></span>
-                    <h4>Phone</h4>
-                    <p>+6661-623-6159</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 text-center">
-                <div class="contact__widget">
-                    <span class="icon_pin_alt"></span>
-                    <h4>Address</h4>
-                    <p>188/97 Moo.4 BangpheeYai , Bangphee District , Samutprakarn 10540</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 text-center">
-                <div class="contact__widget">
-                    <span class="icon_clock_alt"></span>
-                    <h4>Open time</h4>
-                    <p>10:00 am to 23:00 pm</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 text-center">
-                <div class="contact__widget">
-                    <span class="icon_mail_alt"></span>
-                    <h4>Email</h4>
-                    <p>gift2gives.thailand@gmail.com</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Contact Section End -->
-
-<!-- Map Begin -->
-<div class="map">
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49116.39176087041!2d-86.41867791216099!3d39.69977417971648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886ca48c841038a1%3A0x70cfba96bf847f0!2sPlainfield%2C%20IN%2C%20USA!5e0!3m2!1sen!2sbd!4v1586106673811!5m2!1sen!2sbd"
-        height="500" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-    <div class="map-inside">
-        <i class="icon_pin"></i>
-        <div class="inside-widget">
-            <h4>Gifts2Gives</h4>
-            <ul>
-                <li>Phone: +6661-623-6159</li>
-                <li>Add: 188/97 Moo.4 BangpheeYai , Bangphee District , Samutprakarn 10540</li>
-            </ul>
-        </div>
     </div>
 </div>
-<!-- Map End -->
-
-<!-- Contact Form Begin -->
-<div class="contact-form spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="contact__form__title">
-                    <h2>Leave Message</h2>
-                </div>
-            </div>
-        </div>
-        <form action="#">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <input type="text" placeholder="Your name">
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <input type="text" placeholder="Your Email">
-                </div>
-                <div class="col-lg-12 text-center">
-                    <textarea placeholder="Your message"></textarea>
-                    <button type="submit" class="site-btn">SEND MESSAGE</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-<!-- Contact Form End -->
+<!--grids-->
 @stop
 
 
