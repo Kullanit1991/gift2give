@@ -1,5 +1,5 @@
 @extends('app.header')
-@section('title', 'Home')
+@section('title', 'About')
 
 @section('style')
     <style>

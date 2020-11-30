@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,13 +19,8 @@ Auth::routes();
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', function () {
-    return view('app.home');
-});
 
-Route::resource('/', App\Http\Controllers\StarterController::class)->only([
-    'index', 'topSale'
-]);
+Route::get('/',  [App\Http\Controllers\StarterController::class, 'index']);
 
 
 Route::get('admin', function () {
@@ -32,20 +28,9 @@ Route::get('admin', function () {
 })->middleware('is_admin');
 
 
+Route::get('/about',  [App\Http\Controllers\StarterController::class, 'aboutIndex']);
+Route::get('/contact',  [App\Http\Controllers\StarterController::class, 'contactIndex']);
 
-Route::get('/about', function () {
-    return view('app.about.index');
-});
-Route::resource('/about', App\Http\Controllers\StarterController::class)->only([
-    'index', 'show'
-]);
-
-Route::get('/contact', function () {
-    return view('app.contact.index');
-});
-Route::resource('/contact', App\Http\Controllers\StarterController::class)->only([
-    'index', 'show'
-]);
 Route::get('/shopping-cart', function () {
     return view('app.shoping-cart.index');
 });
