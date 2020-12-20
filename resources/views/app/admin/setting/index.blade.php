@@ -61,7 +61,7 @@
                                         </div>
                                         <div class="col-md-auto">
                                         </div>
-                                        <div class="col col-lg-2">
+                                        <div class="col col-lg-2 text-right">
                                           <?php if (count($menu) < 4) { ?>
                                             <a href="{{ url('setting-menu-add') }}" class="btn btn-primary" ><i
                                                     class="fa fa-plus-circle" aria-hidden="true"></i> Add</a>
@@ -134,7 +134,7 @@
                                         </div>
                                         <div class="col-md-auto">
                                         </div>
-                                        <div class="col col-lg-2">
+                                        <div class="col col-lg-2 text-right">
                                             <a href="{{ url('setting-menu-add-submenu') }}" class="btn btn-primary"><i
                                                     class="fa fa-plus-circle" aria-hidden="true"></i> Add</a>
 

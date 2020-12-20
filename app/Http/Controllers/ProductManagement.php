@@ -27,7 +27,6 @@ class ProductManagement extends Controller
 
     public function store(Request $request)
     {
-      
 
       $request->validate([
 
@@ -44,6 +43,8 @@ class ProductManagement extends Controller
             'price' => $request->price,
             'product_photo_path' => $imageName,
             'menu_product_id' => $request->menu_id,
+            'is_souvenir' => ($request->inlineRadioOptions == "Souvenir" )? 1 : 0,
+            'is_gift' => ($request->inlineRadioOptions == "Gift" )? 1 : 0,
             'status' => 'Y'
         ]);
 

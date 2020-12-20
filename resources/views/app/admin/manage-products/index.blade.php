@@ -50,7 +50,7 @@
                                         </div>
                                         <div class="col-md-auto">
                                         </div>
-                                        <div class="col col-lg-2">
+                                        <div class="col col-lg-2 text-right">
                                             <a href="{{ url('product-add') }}" class="btn btn-primary"><i
                                                     class="fa fa-plus-circle" aria-hidden="true"></i> Add</a>
 
@@ -66,6 +66,7 @@
                                             <th>Desc</th>
                                             <th>Price</th>
                                             <th>Special Price</th>
+                                            <th>Group</th>
                                             <th>status</th>
                                             <th width="150px">Action</th>
                                         </tr>
@@ -80,6 +81,7 @@
                                             <td>{{ $value->description }}</td>
                                             <td>{{ $value->price }}</td>
                                             <td>{{ $value->sale_price }}</td>
+                                            <td>{{ $value->is_souvenir == 1 ? "Souvenir" : "Gift" }}</td>
                                             <td>
                                                 @if ($value->status == 'Y')
                                                     <span style="color: green; font-weight: bold;">Active</span>

@@ -64,7 +64,7 @@
         </div>
     </div>
     <!-- team -->
-    <div class="banner_bottom_agile_info team">
+    {{-- <div class="banner_bottom_agile_info team">
         <div class="container">
             <h3 class="wthree_text_info">Our Team <span>Members</span></h3>
             <div class="inner_w3l_agile_grids">
@@ -188,7 +188,7 @@
             </div>
         </div>
     </div>
-    <!-- //team -->
+    <!-- //team --> --}}
 
     <!-- schedule-bottom -->
     <div class="schedule-bottom">

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Auth\FacebookController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,24 +24,26 @@ Auth::routes();
 
 Route::get('/',  [App\Http\Controllers\StarterController::class, 'index']);
 
+Route::get('change/{locale}', function ($locale) {
+    Session::put('locale', $locale);
+    return Redirect::back();
+    });
 
 Route::get('admin', function () {
     return view('app.admin.dashboard.index');
 })->middleware('is_admin');
 
+Route::get('auth/facebook', [FacebookController::class, 'redirectToFacebook']);
+Route::get('auth/facebook/callback', [FacebookController::class, 'handleFacebookCallback']);
 
 Route::get('/about',  [App\Http\Controllers\StarterController::class, 'aboutIndex']);
 Route::get('/contact',  [App\Http\Controllers\StarterController::class, 'contactIndex']);
 
-Route::get('/shopping-cart', function () {
-    return view('app.shoping-cart.index');
-});
+Route::get('/list/{menu}/{submenu}/{id}', [App\Http\Controllers\ShopingGridController::class, 'index']);
 Route::get('/check-out', function () {
     return view('app.checkouts.index');
 });
-// Route::get('/admin', function () {
-//     return view('app.admin.dashboard.index');
-// });
+Route::get('/view-detail/{productId}/{productname}', [App\Http\Controllers\ShopingGridController::class, 'shopViewIndex']);
 
 
 Route::get('setting-menu', [App\Http\Controllers\MenuManagement::class, 'index'])->middleware('is_admin')->name('setting.menu');
@@ -64,6 +68,19 @@ Route::get('top-sale-add',  [App\Http\Controllers\TopSaleController::class, 'cre
 Route::get('top-sale-add-type',  [App\Http\Controllers\TopSaleController::class, 'createType'])->middleware('is_admin');
 Route::post('top-sale-store',  [App\Http\Controllers\TopSaleController::class, 'store'])->middleware('is_admin')->name('top-sale.store');
 Route::post('top-sale-store/categories',  [App\Http\Controllers\TopSaleController::class, 'storeType'])->middleware('is_admin')->name('top-sale.type.store');
+Route::get('top-sale-edit-type/{id}',  [App\Http\Controllers\TopSaleController::class, 'editType'])->middleware('is_admin');
+Route::get('top-sale-delete-type/{id}',  [App\Http\Controllers\TopSaleController::class, 'deleteType'])->middleware('is_admin');
+Route::post('top-sale-store/categories/edit',  [App\Http\Controllers\TopSaleController::class, 'storeEditType'])->middleware('is_admin')->name('top-sale.type.edit');
 
+Route::group(['prefix' => 'admin'], function()
+{
+    Route::get('/setting/home-screen', [App\Http\Controllers\ScreenSetUpController::class, 'homeIndex'])->middleware('is_admin')->name('home-screen');
+    
+    Route::get('/setting/home-screen/slides', [App\Http\Controllers\ScreenSetUpController::class, 'slidesIndex'])->middleware('is_admin')->name('list-slides');
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/setting/home-screen/slides/add', [App\Http\Controllers\ScreenSetUpController::class, 'slidesCreate'])->middleware('is_admin')->name('list-slides.add');
+
+    Route::post('/setting/home-screen/slides/store',  [App\Http\Controllers\ScreenSetUpController::class, 'storeSlides'])->middleware('is_admin')->name('list-slides.store');
+
+    Route::get('/setting/shop-grid-screen', [App\Http\Controllers\ScreenSetUpController::class, 'shopGridIndex'])->middleware('is_admin')->name('shop-grid');
+});

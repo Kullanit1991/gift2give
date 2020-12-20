@@ -95,8 +95,9 @@
                                                     <span style="color: red; font-weight: bold;">In Active</span>
                                                 @endif
                                             </td>
-                                            <td><button type="button" class="btn btn-secondary">Edit</button>
-                                              <button type="button" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                                            <td><a  class="btn btn-secondary" href="{{ url("top-sale-edit-type/$value->id") }}"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                                              <a type="button" class="btn btn-danger" href="{{ url("top-sale-delete-type/$value->id") }}"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                                
                                         </tr>
                                         <?php }
                                         } else {
@@ -136,7 +137,7 @@
                                         </div>
                                         <div class="col-md-auto">
                                         </div>
-                                        <div class="col col-lg-2">
+                                        <div class="col col-lg-2 text-right">
                                             <a href="{{ url('top-sale-add') }}" class="btn btn-primary"><i
                                                     class="fa fa-plus-circle" aria-hidden="true"></i> Add</a>
 

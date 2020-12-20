@@ -35,12 +35,40 @@ class TopSaleController extends Controller
         return view('app.admin.top-sale.add-type');
     }
 
+    public function editType($id)
+    {
+        $data = TopSaleType::find($id);
+        return view('app.admin.top-sale.edit-type', ['data' => $data]);
+    }
+
+    public function deleteType($id)
+    {
+    
+       $data = TopSaleType::find($id);
+       $data2 = TopSaleType::where('top_sale_type_id','=',$id)->delete();
+       $data->delete();
+       return redirect()->route('top-sale');
+    }
+
     public function storeType(Request $request)
     {
-     
+  
         $menu = TopSaleType::create([
             'name' => $request->name,
             'status' => 'Y',
+        ]);
+     
+
+        return redirect()->route('top-sale');
+    }
+
+    public function storeEditType(Request $request)
+    {
+     
+        dd($request);
+        $menu = TopSaleType::find($request->id)->update([
+            'name' => $request->name,
+            'status' => $request->status,
         ]);
      
 

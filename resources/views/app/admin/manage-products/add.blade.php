@@ -43,7 +43,8 @@
                                     <select name="menu_id" id="menu_id" class="form-control">
                                         <option selected disabled="" value="0">- Please Choose... -</option>
                                         @foreach ($submenu as $item)
-                                            <option value="{{ $item->id }}">{{ $item->menu_name }} - {{ $item->submenu_name }}</option>
+                                            <option value="{{ $item->id }}">{{ $item->menu_name }} -
+                                                {{ $item->submenu_name }}</option>
                                         @endforeach
 
 
@@ -77,10 +78,31 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label for="sale_price" class="col-sm-2 col-form-label">Product Group</label>
+                                <div class="col-sm-10 text-left">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio1" value="Souvenir">
+                                        <label class="form-check-label" for="inlineRadio1">Souvenir</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio2" value="Gift" checked>
+                                        <label class="form-check-label" for="inlineRadio2">Gift</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="inputEmail" class="col-sm-3 col-form-label">Product Image (255x291
                                     pixels)</label>
                                 <div class="col-sm-9">
-                                    <input type="file" class="form-control" id="picture" name="picture">
+                                    <input type="file" class="form-control" id="picture" name="picture" onchange="loadPreview(this);" >
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail" class="col-sm-2 col-form-label">Preview Image</label>
+                                <div class="col-sm-10 text-left">
+                                    <img id="preview_img" src="https://www.w3adda.com/wp-content/uploads/2019/09/No_Image-128.png" width="15%" />
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -102,10 +124,10 @@
 
 
 @section('script')
-    <script>
+    {{-- <script>
         $(document).ready(function() {
 
         });
 
-    </script>
+    </script> --}}
 @stop

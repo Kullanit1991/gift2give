@@ -7,6 +7,7 @@ use App\Models\Menu;
 use App\Models\SubMenu;
 use App\Models\TopSale;
 use App\Models\TopSaleType;
+use App\Models\banners;
 
 class StarterController extends Controller
 {
@@ -33,9 +34,10 @@ class StarterController extends Controller
            
         }
 
+        $banner = banners::get();
 
 
-        return view('app.home',['response'=> $response,'topsale'=> $response2]);
+        return view('app.home',['response'=> $response,'topsale'=> $response2, 'banner' => $banner]);
     }
 
     public function aboutIndex()
@@ -89,6 +91,8 @@ class StarterController extends Controller
 
         return view('app.contact.index',['response'=> $response,'topsale'=> $response2]);
     }
+
+    
 
 
 }

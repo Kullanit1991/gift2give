@@ -19,7 +19,10 @@
 
     </script>
     <!--//tags -->
+
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('css/flexslider.css') }}" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery-ui.css') }}">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
     <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
     <link href="{{ asset('css/easy-responsive-tabs.css') }}" rel='stylesheet' type='text/css' />
@@ -77,7 +80,7 @@
                 </div>
                 <!-- header-bot -->
                 <div class="col-md-4 logo_agile">
-                    <h1><a href="{{ url('/') }}"><img src="img\logo_main1.png" /> <i
+                    <h1><a href="{{ url('/') }}"><img src="{{ asset('img\logo_main1.png') }}" /> <i
                                 class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
                 </div>
                 <!-- header-bot -->
@@ -102,8 +105,15 @@
                             </a></li>
                     </ul>
 
-
-
+                   
+                </div>
+                <div class="col-md-4 header-right">
+                    <ul>
+                    <li class="share"><a style="text-decoration : none;"
+                        href="{{ URL::to('change/en') }}"><img src="{{ asset('images/england-flag.jpg') }}" width="20px"/> en</a>
+                        <a style="text-decoration : none;"
+                        href="{{ URL::to('change/th') }}"><img src="{{ asset('images/TH.jpg') }}" width="20px"/> th</a></li>
+                    </ul>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -129,11 +139,11 @@
                             <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav menu__list">
                                     <li class="menu__item {{ request()->is('/') ? 'active menu__item--current' : '' }}">
-                                        <a class="menu__link" href="{{ url('/') }}">Home <span
+                                        <a class="menu__link" href="{{ url('/') }}">{{ trans('message.Home') }} <span
                                                 class="sr-only">(current)</span></a></li>
                                     <li
                                         class=" menu__item {{ request()->is('about') ? 'active menu__item--current' : '' }}">
-                                        <a class="menu__link" href="{{ url('/about') }}">About</a>
+                                        <a class="menu__link" href="{{ url('/about') }}">{{ trans('message.About') }} </a>
                                     </li>
                                     @if (count($response) > 0)
                                      
@@ -151,11 +161,11 @@
                                                         <div class="col-sm-6 multi-gd-img1 multi-gd-text ">
                                                     
                                                             @if ($item->id == 1)
-                                                            <a href="#"><img src="images/mens.jpg" alt=" " /></a>
+                                                            <a href="#"><img src="{{ asset('images/mens.jpg') }}" alt=" " /></a>
                                                             @elseif($item->id == 2)
-                                                            <a href="#"><img src="images/top1.jpg" alt=" " /></a>
+                                                            <a href="#"><img src="{{ asset('images/top1.jpg') }}" alt=" " /></a>
                                                             @elseif($item->id == 3)
-                                                            <a href="#"><img src="images/kids.jpeg" alt=" " /></a>
+                                                            <a href="#"><img src="{{ asset('images/kids.jpeg') }}" alt=" " /></a>
                                                             @endif
                                            
                                                         </div>
@@ -166,7 +176,7 @@
                                                                         # code...
                                                                         if($key < 5){
                                                                     ?>
-                                                                <li><a href="#">{{ $value->submenu_name }}</a></li>
+                                                                <li><a href="{{ url("/list/$item->menu_name/$value->submenu_name/$value->id") }}">{{ $value->submenu_name }}</a></li>
 
                                                                 <?php } } ?>
                                                             </ul>
@@ -179,7 +189,7 @@
                                                         ?>
                                                         <div class="col-sm-3 multi-gd-img">
                                                             <ul class="multi-column-dropdown">
-                                                                <li><a href="#">{{ $value->submenu_name }}</a></li>
+                                                                <li><a href="{{ url("/list/$item->menu_name/$value->submenu_name/$value->id") }}">{{ $value->submenu_name }}</a></li>
                                                             </ul>
                                                         </div>
                                                         <?php 
@@ -198,7 +208,7 @@
                                                     data-toggle="dropdown">{{$item->menu_name}} <b class="caret"></b></a>
                                                 <ul class="dropdown-menu agile_short_dropdown">
                                                     @foreach ($item->submenu as $key => $value)
-                                                    <li><a href="#">{{  $value->submenu_name }}</a></li>
+                                                    <li><a href="{{ url("/list/$item->menu_name/$value->submenu_name/$value->id") }}">{{  $value->submenu_name }}</a></li>
                                                     @endforeach
                                                 </ul>
                                             </li>
@@ -277,7 +287,7 @@
                                     </li> --}}
                                     <li
                                         class=" menu__item {{ request()->is('contact') ? 'active menu__item--current' : '' }}">
-                                        <a class="menu__link" href="{{ url('/contact') }}">Contact</a>
+                                        <a class="menu__link" href="{{ url('/contact') }}">{{ trans('message.Contact') }}</a>
                                     </li>
                                 </ul>
                             </div>
@@ -339,7 +349,7 @@
                             <input type="submit" value="Sign In">
                         </form>
                         <ul class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">
-                            <li><a href="#" class="facebook">
+                            <li><a href="{{ url('auth/facebook') }}" class="facebook">
                                     <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
                                     <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
                                 </a></li>
@@ -365,7 +375,7 @@
 
                     </div>
                     <div class="col-md-4 modal_body_right modal_body_right1">
-                        <img src="images/gg_1.png" alt=" " />
+                        <img src="{{ asset('images/gg_1.png') }}" alt=" " />
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -456,7 +466,7 @@
 
                     </div>
                     <div class="col-md-4 modal_body_right modal_body_right1">
-                        <img src="images/gg_1.png" alt=" " />
+                        <img src="{{ asset('images/gg_1.png') }}" alt=" " />
                     </div>
                     <div class="clearfix"></div>
                 </div>

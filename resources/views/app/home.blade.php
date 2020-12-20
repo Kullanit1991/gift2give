@@ -10,61 +10,43 @@
 @section('content')
     <!-- banner -->
     <div id="homeVue">
+        @if (count($banner) > 0)
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-                {{-- <li data-target="#myCarousel" data-slide-to="2" class=""></li>
-                <li data-target="#myCarousel" data-slide-to="3" class=""></li>
-                <li data-target="#myCarousel" data-slide-to="4" class=""></li> --}}
+                @foreach ($banner as $key => $item)
+                    @if ($key == 0)
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    @else    
+                    <li data-target="#myCarousel" data-slide-to="{{ $key }}" class=""></li>
+                    @endif
+                @endforeach
+               
             </ol>
             <div class="carousel-inner" role="listbox">
+                @foreach ($banner as $key => $item)
+                @if ($key == 0)
                 <div class="item active">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h3>The Biggest <span>Sale</span></h3>
-                            <p>Special for Christmas</p>
+                            <h3><span>{{ $item->title }}</span></h3>
+                            <p>{{ $item->subtitle }}</p>
                             <a class="hvr-outline-out button2" href="#">Shop Now </a>
                         </div>
                     </div>
                 </div>
+                @else 
                 <div class="item item2">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h3>New Year <span>Collection</span></h3>
-                            <p>New Arrivals On Sale</p>
+                            <h3><span>{{ $item->title }}</span></h3>
+                            <p>{{ $item->subtitle }}</p>
                             <a class="hvr-outline-out button2" href="#">Shop Now </a>
                         </div>
                     </div>
                 </div>
-                {{-- <div class="item item3">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h3>The Biggest <span>Sale</span></h3>
-                            <p>Special for today</p>
-                            <a class="hvr-outline-out button2" href="#">Shop Now </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item item4">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h3>Summer <span>Collection</span></h3>
-                            <p>New Arrivals On Sale</p>
-                            <a class="hvr-outline-out button2" href="#">Shop Now </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item item5">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h3>The Biggest <span>Sale</span></h3>
-                            <p>Special for today</p>
-                            <a class="hvr-outline-out button2" href="#">Shop Now </a>
-                        </div>
-                    </div>
-                </div> --}}
+                @endif
+                @endforeach
             </div>
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -76,6 +58,7 @@
             </a>
             <!-- The Modal -->
         </div>
+        @endif
         <!-- //banner -->
         <div class="banner_bottom_agile_info">
             <div class="container">
@@ -142,7 +125,7 @@
                     <a href="wo#">
                         <div class="bb-left-agileits-w3layouts-inner grid">
                             <figure class="effect-roxy">
-                                <img src="images/bb1.jpg" alt=" " class="img-responsive" />
+                                <img src="{{ asset('images/bb1.jpg') }}" alt=" " class="img-responsive" />
                                 <figcaption>
                                     <h1><span>S</span>ale </h1>
                                     <p>Upto 55%</p>
@@ -155,7 +138,7 @@
                     <a href="#">
                         <div class="bb-middle-agileits-w3layouts grid">
                             <figure class="effect-roxy">
-                                <img src="images/bottom3.jpg" alt=" " class="img-responsive" />
+                                <img src="{{ asset('images/bottom3.jpg') }}" alt=" " class="img-responsive" />
                                 <figcaption>
                                     <h1><span>S</span>ale </h1>
                                     <p>Upto 55%</p>
@@ -166,7 +149,7 @@
                     <a href="#">
                         <div class="bb-middle-agileits-w3layouts forth grid">
                             <figure class="effect-roxy">
-                                <img src="images/bottom4.jpg" alt=" " class="img-responsive">
+                                <img src="{{ asset('images/bottom4.jpg') }}" alt=" " class="img-responsive">
                                 <figcaption>
                                     <h1><span>S</span>ale </h1>
                                     <p>Upto 65%</p>
@@ -213,20 +196,17 @@
                         <!--/tab_one-->
                  @foreach ($topsale as $key => $item)
                     @if (count($item->topsales) > 0)
-                 
-                 
-                     
                 
                     <div class="tab{{$key+1}}">
                         @foreach ($item->topsales as $key2 => $item2)
                             <div class="col-md-3 product-men">
                                 <div class="men-pro-item simpleCart_shelfItem">
                                     <div class="men-thumb-item">
-                                    <img src="product_img/{{ $item2->product_photo_path }}" alt="" class="pro-image-front">
-                                        <img src="product_img/{{ $item2->product_photo_path }}" alt="" class="pro-image-back">
+                                    <img src="{{ asset("product_img/$item2->product_photo_path") }}" alt="" class="pro-image-front">
+                                        <img src="{{ asset("product_img/$item2->product_photo_path") }}" alt="" class="pro-image-back">
                                         <div class="men-cart-pro">
                                             <div class="inner-men-cart-pro">
-                                                <a href="#" class="link-product-add-cart">Quick View</a>
+                                            <a href="{{ url("/view-detail/$item2->id/$item2->name") }}" class="link-product-add-cart">Quick View</a>
                                             </div>
                                         </div>
                                         <span class="product-new-top">New</span>
