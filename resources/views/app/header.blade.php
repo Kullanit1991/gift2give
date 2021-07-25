@@ -16,7 +16,6 @@
         function hideURLbar() {
             window.scrollTo(0, 1);
         }
-
     </script>
     <!--//tags -->
 
@@ -26,11 +25,10 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
     <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
     <link href="{{ asset('css/easy-responsive-tabs.css') }}" rel='stylesheet' type='text/css' />
+    <link href="{{ asset('css/bootstrap-select-country.min') }}" rel='stylesheet' type='text/css' />
     <!-- //for bootstrap working -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
-    <link
-        href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic'
-        rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
     @yield('style')
 </head>
 
@@ -42,27 +40,22 @@
             <div class="container">
                 <ul>
                     @guest
-                        <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt"
-                                    aria-hidden="true"></i> Sign In </a></li>
-                        <li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o"
-                                    aria-hidden="true"></i> Sign Up </a></li>
+                    <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Sign In </a></li>
+                    <li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign Up </a></li>
                     @endguest
 
                     <li><i class="fa fa-phone" aria-hidden="true"></i> Call : 01234567898</li>
-                    <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a
-                            href="mailto:info@example.com">gift2gives.thailand@gmail.com</a></li>
+                    <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">gift2gives.thailand@gmail.com</a></li>
                     @auth
-                        <li><a href="#" data-toggle="modal" data-target=""><i class="fa fa-user" aria-hidden="true"></i>
-                                Hello! {{ Auth::user()->name }}</a></li>
-                        <li> <a href="#" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                  document.getElementById('logout-form').submit();"><i
-                                    class="fa fa-sign-out" aria-hidden="true"></i> {{ __('Logout') }} </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </li>
+                    <li><a href="#" data-toggle="modal" data-target=""><i class="fa fa-user" aria-hidden="true"></i>
+                            Hello! {{ Auth::user()->name }}</a></li>
+                    <li> <a href="#" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                  document.getElementById('logout-form').submit();"><i class="fa fa-sign-out" aria-hidden="true"></i> {{ __('Logout') }} </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
                     @endauth
-
 
                 </ul>
             </div>
@@ -80,8 +73,7 @@
                 </div>
                 <!-- header-bot -->
                 <div class="col-md-4 logo_agile">
-                    <h1><a href="{{ url('/') }}"><img src="{{ asset('img\logo_main1.png') }}" /> <i
-                                class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
+                    <h1><a href="{{ url('/') }}"><img src="{{ asset('img\logo\FullColor_TransparentBg_1280x1024_72dpi.png') }}" /> <i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
                 </div>
                 <!-- header-bot -->
                 <div class="col-md-4 agileits-social top_content">
@@ -105,15 +97,27 @@
                             </a></li>
                     </ul>
 
-                   
+
                 </div>
                 <div class="col-md-4 header-right">
-                    <ul>
-                    <li class="share"><a style="text-decoration : none;"
+
+                    <!-- <ul>
+                        <li class="share"><a style="text-decoration : none;"
                         href="{{ URL::to('change/en') }}"><img src="{{ asset('images/england-flag.jpg') }}" width="20px"/> en</a>
                         <a style="text-decoration : none;"
                         href="{{ URL::to('change/th') }}"><img src="{{ asset('images/TH.jpg') }}" width="20px"/> th</a></li>
-                    </ul>
+                    
+                    
+                        <li><a href="{{ URL::to('change/en') }}"><img src="{{ asset('images/england-flag.jpg') }}" width="20px" /> en </a></li>
+                        <li><a href="{{ URL::to('change/th') }}"><img src="{{ asset('images/TH.jpg') }}" width="20px" /> th</a></li>
+                    </ul> -->
+
+                    <select class="form-select" >
+                        <option style="background-image:url('images/england-flag.jpg');" selected> en</option>
+                        <option style="background-image:url('images/TH.jpg');" value="th"> th</option>
+                    </select>
+
+
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -127,8 +131,7 @@
                         <div class="container-fluid">
                             <!-- Brand and toggle get grouped for better mobile display -->
                             <div class="navbar-header">
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                                     <span class="sr-only">Toggle navigation</span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
@@ -139,81 +142,78 @@
                             <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav menu__list">
                                     <li class="menu__item {{ request()->is('/') ? 'active menu__item--current' : '' }}">
-                                        <a class="menu__link" href="{{ url('/') }}">{{ trans('message.Home') }} <span
-                                                class="sr-only">(current)</span></a></li>
-                                    <li
-                                        class=" menu__item {{ request()->is('about') ? 'active menu__item--current' : '' }}">
+                                        <a class="menu__link" href="{{ url('/') }}">{{ trans('message.Home') }} <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class=" menu__item {{ request()->is('about') ? 'active menu__item--current' : '' }}">
                                         <a class="menu__link" href="{{ url('/about') }}">{{ trans('message.About') }} </a>
                                     </li>
                                     @if (count($response) > 0)
-                                     
-                                        @foreach ($response as $item)
 
-                                        @if ($item->id != 4)
-                                            
-                                      
-                                            <li class="dropdown menu__item">
-                                                <a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown"
-                                                    role="button" aria-haspopup="true" aria-expanded="false">{{$item->menu_name}} <span
-                                                        class="caret"></span></a>
-                                                <ul class="dropdown-menu multi-column columns-3">
-                                                    <div class="agile_inner_drop_nav_info">
-                                                        <div class="col-sm-6 multi-gd-img1 multi-gd-text ">
-                                                    
-                                                            @if ($item->id == 1)
-                                                            <a href="#"><img src="{{ asset('images/mens.jpg') }}" alt=" " /></a>
-                                                            @elseif($item->id == 2)
-                                                            <a href="#"><img src="{{ asset('images/top1.jpg') }}" alt=" " /></a>
-                                                            @elseif($item->id == 3)
-                                                            <a href="#"><img src="{{ asset('images/kids.jpeg') }}" alt=" " /></a>
-                                                            @endif
-                                           
-                                                        </div>
-                                                        <div class="col-sm-3 multi-gd-img">
-                                                            <ul class="multi-column-dropdown">
-                                                                <?php 
-                                                                    foreach ( $item->submenu as $key => $value) {
-                                                                        # code...
-                                                                        if($key < 5){
-                                                                    ?>
-                                                                <li><a href="{{ url("/list/$item->menu_name/$value->submenu_name/$value->id") }}">{{ $value->submenu_name }}</a></li>
+                                    @foreach ($response as $item)
 
-                                                                <?php } } ?>
-                                                            </ul>
-                                                        </div>
-                                                        <?php 
-                                                       if(count($item->submenu) > 5) {
-                                                        foreach ( $item->submenu as $key => $value) {
-                                                                        # code...
-                                                                        if($key >= 5){
+                                    @if ($item->id != 4)
+
+
+                                    <li class="dropdown menu__item">
+                                        <a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$item->menu_name}} <span class="caret"></span></a>
+                                        <ul class="dropdown-menu multi-column columns-3">
+                                            <div class="agile_inner_drop_nav_info">
+                                                <div class="col-sm-6 multi-gd-img1 multi-gd-text ">
+
+                                                    @if ($item->id == 1)
+                                                    <a href="#"><img src="{{ asset('images/mens.jpg') }}" alt=" " /></a>
+                                                    @elseif($item->id == 2)
+                                                    <a href="#"><img src="{{ asset('images/top1.jpg') }}" alt=" " /></a>
+                                                    @elseif($item->id == 3)
+                                                    <a href="#"><img src="{{ asset('images/kids.jpeg') }}" alt=" " /></a>
+                                                    @endif
+
+                                                </div>
+                                                <div class="col-sm-3 multi-gd-img">
+                                                    <ul class="multi-column-dropdown">
+                                                        <?php
+                                                        foreach ($item->submenu as $key => $value) {
+                                                            # code...
+                                                            if ($key < 5) {
                                                         ?>
-                                                        <div class="col-sm-3 multi-gd-img">
-                                                            <ul class="multi-column-dropdown">
                                                                 <li><a href="{{ url("/list/$item->menu_name/$value->submenu_name/$value->id") }}">{{ $value->submenu_name }}</a></li>
-                                                            </ul>
-                                                        </div>
-                                                        <?php 
-                                                                        }
-                                                       }
-                                                       }
-                                                        
-                                                         ?>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                </ul>
-                                            </li>
-                                            @else
-                                            <li class="menu__item dropdown">
-                                                <a class="menu__link" href="#" class="dropdown-toggle"
-                                                    data-toggle="dropdown">{{$item->menu_name}} <b class="caret"></b></a>
-                                                <ul class="dropdown-menu agile_short_dropdown">
-                                                    @foreach ($item->submenu as $key => $value)
-                                                    <li><a href="{{ url("/list/$item->menu_name/$value->submenu_name/$value->id") }}">{{  $value->submenu_name }}</a></li>
-                                                    @endforeach
-                                                </ul>
-                                            </li>
-                                            @endif
-                                        @endforeach
+
+                                                        <?php }
+                                                        } ?>
+                                                    </ul>
+                                                </div>
+                                                <?php
+                                                if (count($item->submenu) > 5) {
+                                                    foreach ($item->submenu as $key => $value) {
+                                                        # code...
+                                                        if ($key >= 5) {
+                                                ?>
+                                                            <div class="col-sm-3 multi-gd-img">
+                                                                <ul class="multi-column-dropdown">
+                                                                    <li><a href="{{ url("/list/$item->menu_name/$value->submenu_name/$value->id") }}">{{ $value->submenu_name }}</a></li>
+                                                                </ul>
+                                                            </div>
+                                                <?php
+                                                        }
+                                                    }
+                                                }
+
+                                                ?>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    @else
+                                    <li class="menu__item dropdown">
+                                        <a class="menu__link" href="#" class="dropdown-toggle" data-toggle="dropdown">{{$item->menu_name}} <b class="caret"></b></a>
+                                        <ul class="dropdown-menu agile_short_dropdown">
+                                            @foreach ($item->submenu as $key => $value)
+                                            <li><a href="{{ url("/list/$item->menu_name/$value->submenu_name/$value->id") }}">{{ $value->submenu_name }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                    @endif
+                                    @endforeach
 
                                     @endif
 
@@ -285,8 +285,7 @@
                                             <li><a href="typography.html">Wedding</a></li>
                                         </ul>
                                     </li> --}}
-                                    <li
-                                        class=" menu__item {{ request()->is('contact') ? 'active menu__item--current' : '' }}">
+                                    <li class=" menu__item {{ request()->is('contact') ? 'active menu__item--current' : '' }}">
                                         <a class="menu__link" href="{{ url('/contact') }}">{{ trans('message.Contact') }}</a>
                                     </li>
                                 </ul>
@@ -299,8 +298,7 @@
                         <form action="#" method="post" class="last">
                             <input type="hidden" name="cmd" value="_cart">
                             <input type="hidden" name="display" value="1">
-                            <button class="w3view-cart" type="submit" name="submit" value=""><i
-                                    class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+                            <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
                         </form>
 
                     </div>
@@ -324,26 +322,23 @@
                         <form action="{{ route('login') }}" method="POST">
                             @csrf
                             <div class="styled-input agile-styled-input-top">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                    name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                 <label>Email</label>
                                 <span></span>
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                             <div class="styled-input">
-                                <input id="password" type="password"
-                                    class="form-control @error('password') is-invalid @enderror" name="password"
-                                    required autocomplete="current-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                                 <label>Password</label>
                                 <span></span>
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                             <input type="submit" value="Sign In">
@@ -398,42 +393,37 @@
                         <form action="{{ route('register') }}" method="post">
                             @csrf
                             <div class="styled-input agile-styled-input-top">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                    name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                                 <label>Name</label>
                             </div>
                             <div class="styled-input">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                    name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                                 <label>Email</label>
                             </div>
                             <div class="styled-input">
-                                <input id="password" type="password"
-                                    class="form-control @error('password') is-invalid @enderror" name="password"
-                                    required autocomplete="new-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                                 <label>Password</label>
                             </div>
                             <div class="styled-input">
-                                <input id="password-confirm" type="password" class="form-control"
-                                    name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                 <label>Confirm Password</label>
                                 <span></span>
                             </div>

@@ -36,8 +36,9 @@ class ScreenSetUpController extends Controller
     {
 
         $request->validate([
-
-            'picture' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'title' => 'required',
+            'subtitle' => 'required',
+            'picture' => 'required|image|mimes:jpeg,png,jpg',
             ]);
     
             $imageName = time().'.'.$request->picture->extension();  
@@ -50,7 +51,18 @@ class ScreenSetUpController extends Controller
             ]);
     
             return redirect()->route('list-slides')->with('alert', 'Slide Uploaded Successfully!');
-            ;
+           
+    }
+
+    public function removeSlides($id)
+    {
+
+       
+
+            banners::find($id)->delete();
+    
+            return redirect()->route('list-slides')->with('alert', 'remove Successfully!');
+            
     }
 
     public function shopGridIndex()

@@ -14,9 +14,9 @@ class AddStatusToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->longText('home_address');
+            $table->longText('home_address')->nullable();
             $table->char('status', 1)->nullable();
-            $table->year('birth_year');
+            $table->year('birth_year')->nullable();
         });
     }
 

@@ -10,22 +10,29 @@
 @section('content')
     <!-- banner -->
     <div id="homeVue">
-        @if (count($banner) > 0)
+
+ 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
-                @foreach ($banner as $key => $item)
-                    @if ($key == 0)
+              
+                    @if (count($banner) <= 0)
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     @else    
+                    @foreach ($banner as $key => $item)
+                    @if ($key == 0)
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    @else
                     <li data-target="#myCarousel" data-slide-to="{{ $key }}" class=""></li>
                     @endif
-                @endforeach
+                    @endforeach
+                    @endif
+              
                
             </ol>
             <div class="carousel-inner" role="listbox">
-                @foreach ($banner as $key => $item)
-                @if ($key == 0)
+                
+               @if (count($banner) <= 0)
                 <div class="item active">
                     <div class="container">
                         <div class="carousel-caption">
@@ -35,8 +42,26 @@
                         </div>
                     </div>
                 </div>
+               
                 @else 
-                <div class="item item2">
+
+                @foreach ($banner as $key => $item)
+
+                  @if ($key == 0)
+                  <div class="item active" style="background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../banner_img/{{$item->banner_photo_path}}) no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../banner_img/{{$item->banner_photo_path}}) no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../banner_img/{{$item->banner_photo_path}}) no-repeat; 
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../banner_img/{{$item->banner_photo_path}}) no-repeat;
+	background-size:cover;">
+                  @else
+                  <div class="item" style="background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../banner_img/{{$item->banner_photo_path}}) no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../banner_img/{{$item->banner_photo_path}}) no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../banner_img/{{$item->banner_photo_path}}) no-repeat; 
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../banner_img/{{$item->banner_photo_path}}) no-repeat;
+	background-size:cover;">
+                  @endif
+                
+                
                     <div class="container">
                         <div class="carousel-caption">
                             <h3><span>{{ $item->title }}</span></h3>
@@ -45,8 +70,9 @@
                         </div>
                     </div>
                 </div>
-                @endif
+                
                 @endforeach
+                @endif
             </div>
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -58,7 +84,7 @@
             </a>
             <!-- The Modal -->
         </div>
-        @endif
+      
         <!-- //banner -->
         <div class="banner_bottom_agile_info">
             <div class="container">

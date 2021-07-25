@@ -82,5 +82,7 @@ Route::group(['prefix' => 'admin'], function()
 
     Route::post('/setting/home-screen/slides/store',  [App\Http\Controllers\ScreenSetUpController::class, 'storeSlides'])->middleware('is_admin')->name('list-slides.store');
 
+    Route::get('/setting/home-screen/slides/remove/{id}',  [App\Http\Controllers\ScreenSetUpController::class, 'removeSlides'])->middleware('is_admin')->name('list-slides.remove');
+
     Route::get('/setting/shop-grid-screen', [App\Http\Controllers\ScreenSetUpController::class, 'shopGridIndex'])->middleware('is_admin')->name('shop-grid');
 });

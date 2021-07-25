@@ -1,8 +1,8 @@
 <!-- footer -->
 <div class="footer">
     <div class="footer_agile_inner_info_w3l">
-        <div class="col-md-3 footer-left">
-            <h2><a href="index.html"><img src="{{ asset('img\logo_main1.png') }}" /> </a></h2>
+        <div class="col-md-3 footer-left logo_agile">
+            <h2><a href="index.html"><img src="{{ asset('img\logo\FullColor_1280x1024_72dpi.png') }}" /> </a></h2>
             <p>Making every minutes become precious moments of your life</p>
             <ul class="social-nav model-3d-0 footer-social w3_agile_social two">
                 <li><a href="#" class="facebook">
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 sign-gd flickr-post">
+                <!-- <div class="col-md-3 sign-gd flickr-post">
                     <h4>Flickr <span>Posts</span></h4>
                     <ul>
                         <li><a href="single.html"><img src="images/t1.jpg" alt=" " class="img-responsive" /></a></li>
@@ -84,7 +84,7 @@
                         <li><a href="single.html"><img src="images/t2.jpg" alt=" " class="img-responsive" /></a></li>
                         <li><a href="single.html"><img src="images/t4.jpg" alt=" " class="img-responsive" /></a></li>
                     </ul>
-                </div>
+                </div> -->
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -294,6 +294,7 @@
 
 
 <!-- start-smoth-scrolling -->
+<script type="text/javascript" src="{{ asset('js/bootstrap-select-country.min') }}"></script>
 <script type="text/javascript" src="{{ asset('js/move-top.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/jquery.easing.min.js') }}"></script>
 <script type="text/javascript">

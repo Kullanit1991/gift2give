@@ -10,7 +10,7 @@
 
 @section('content')
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+    <div class="content-wrapper" id="bannerVue">
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
@@ -93,7 +93,8 @@
                                     <td><img src="{{ asset("banner_img/$item->banner_photo_path") }}" width="50%"/></td>
                                     <td>{{ $item->title }}</td>
                                     <td>{{ $item->subtitle }}</td>
-                                    <td><button type="button" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                                    <!-- <td><button type="button" class="btn btn-danger" onclick="window.location='{{ url("admin/setting/home-screen/slides/remove/$item->id") }}'"><i class="fa fa-trash" aria-hidden="true"></i></button></td> -->
+                                    <td><button type="button" class="btn btn-danger" @click="removeSlide({{$item->id}})"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
                                 </tr>
                                     
                                 @endforeach
@@ -127,6 +128,8 @@
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
+
+@include('app.vue.admin.banner')
 @stop
 
 

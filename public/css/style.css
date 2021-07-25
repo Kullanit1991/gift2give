@@ -239,6 +239,20 @@ li.share {
 .logo_agile h1 a:hover {
   text-decoration:none;
 }
+
+.logo_agile img {
+	width:50%!important;
+	margin:auto;
+	padding:auto;
+}
+
+@media screen and (max-width: 640px){
+	.logo_agile img {
+	width:50%!important;
+	margin:auto;
+	padding:auto;
+	}
+}
 i.fa.fa-shopping-bag.top_logo_agile_bag {
     position: absolute;
     font-size: 17px;

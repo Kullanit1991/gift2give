@@ -13,7 +13,7 @@ class CreateSubMenusTable extends Migration
      */
     public function up()
     {
-        Schema::create('submenu', function (Blueprint $table) {
+        Schema::create('sub_menus', function (Blueprint $table) {
             $table->id();
             $table->string('submenu_name');
             $table->string('menu_group_id');
