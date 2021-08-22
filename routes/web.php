@@ -22,7 +22,7 @@ Auth::routes();
 //     return view('welcome');
 // });
 
-Route::get('/',  [App\Http\Controllers\StarterController::class, 'index']);
+Route::get('/',  [App\Http\Controllers\StarterController::class, 'index'])->name('home');
 
 Route::get('change/{locale}', function ($locale) {
     Session::put('locale', $locale);
@@ -46,6 +46,11 @@ Route::get('/check-out', function () {
 Route::get('/view-detail/{productId}/{productname}', [App\Http\Controllers\ShopingGridController::class, 'shopViewIndex']);
 
 
+
+Route::post('/profile/save', [App\Http\Controllers\ProfileController::class, 'saveProfile'])->middleware('auth')->name('profile.save');
+
+
+
 Route::get('setting-menu', [App\Http\Controllers\MenuManagement::class, 'index'])->middleware('is_admin')->name('setting.menu');
 
 Route::get('setting-menu-add', [App\Http\Controllers\MenuManagement::class, 'add'])->middleware('is_admin');
@@ -57,7 +62,9 @@ Route::post('setting-menu/store', [App\Http\Controllers\MenuManagement::class, '
 Route::post('setting-menu/submenu/store', [App\Http\Controllers\MenuManagement::class, 'storeSubmenu'])->middleware('is_admin')->name('setting-menu.store.submenu');
 
 Route::get('setting-user', [App\Http\Controllers\UserManagement::class, 'index'])->middleware('is_admin');
-Route::get('setting-user-edit', [App\Http\Controllers\UserManagement::class, 'edit'])->middleware('is_admin');
+Route::get('setting-user/edit/{id}', [App\Http\Controllers\UserManagement::class, 'edit'])->middleware('is_admin');
+Route::get('setting-user/view/{id}', [App\Http\Controllers\UserManagement::class, 'view'])->middleware('is_admin');
+Route::post('setting-user/save', [App\Http\Controllers\UserManagement::class, 'store'])->middleware('is_admin')->name('setting-user.store');
 
 Route::get('product',  [App\Http\Controllers\ProductManagement::class, 'index'])->middleware('is_admin')->name('product');
 Route::get('product-add',  [App\Http\Controllers\ProductManagement::class, 'create'])->middleware('is_admin');

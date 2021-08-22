@@ -15,7 +15,7 @@
 
                             <fieldset class="clearfix">
 
-                                <p><span class="fa fa-user"></span><input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <p><span class="fa fa-user"></span><input  type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -49,7 +49,7 @@
                         <div class="clearfix"></div>
 
                     </div> <!-- end login -->
-                    <div class="logo"><img src="img\logo_main1.png" />
+                    <div class="logo"><img src="img\logo\FullColor_TransparentBg_1280x1024_72dpi.png" width="75%"/>
 
                         <div class="clearfix"></div>
                     </div>

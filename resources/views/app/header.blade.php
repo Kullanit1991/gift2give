@@ -17,6 +17,55 @@
             window.scrollTo(0, 1);
         }
     </script>
+    <style>
+        .profile-pic {
+            color: transparent;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .profile-pic input {
+            display: none;
+        }
+
+        .profile-pic img {
+            position: absolute;
+            object-fit: cover;
+            width: 165px;
+            height: 165px;
+            box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.35);
+            border-radius: 100px;
+            z-index: 0;
+        }
+
+        .profile-pic .-label {
+            cursor: pointer;
+            height: 165px;
+            width: 165px;
+        }
+
+        .profile-pic:hover .-label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            color: #fafafa;
+            transition: background-color 0.2s ease-in-out;
+            border-radius: 100px;
+            margin-bottom: 0;
+        }
+
+        .profile-pic span {
+            display: inline-flex;
+            padding: 0.2em;
+            height: 2em;
+        }
+    </style>
     <!--//tags -->
 
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
@@ -29,6 +78,8 @@
     <!-- //for bootstrap working -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+
+
     @yield('style')
 </head>
 
@@ -47,7 +98,7 @@
                     <li><i class="fa fa-phone" aria-hidden="true"></i> Call : 01234567898</li>
                     <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">gift2gives.thailand@gmail.com</a></li>
                     @auth
-                    <li><a href="#" data-toggle="modal" data-target=""><i class="fa fa-user" aria-hidden="true"></i>
+                    <li><a href="#" data-toggle="modal" data-target="#myModal3"><i class="fa fa-user" aria-hidden="true"></i>
                             Hello! {{ Auth::user()->name }}</a></li>
                     <li> <a href="#" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                   document.getElementById('logout-form').submit();"><i class="fa fa-sign-out" aria-hidden="true"></i> {{ __('Logout') }} </a>
@@ -112,7 +163,7 @@
                         <li><a href="{{ URL::to('change/th') }}"><img src="{{ asset('images/TH.jpg') }}" width="20px" /> th</a></li>
                     </ul> -->
 
-                    <select class="form-select" >
+                    <select class="form-select">
                         <option style="background-image:url('images/england-flag.jpg');" selected> en</option>
                         <option style="background-image:url('images/TH.jpg');" value="th"> th</option>
                     </select>
@@ -465,6 +516,118 @@
         </div>
     </div>
     <!-- //Modal2 -->
+
+    <!-- Modal3 -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">User Profile</h4>
+                </div>
+                <div class="modal-body">
+
+
+                    <div class="profile-pic">
+
+                        <label class="-label" for="file" style="margin-right: -300px;">
+                            <span class="glyphicon glyphicon-camera"></span>
+                            <span>Change Image</span>
+                        </label>
+                        @php
+                        $profile = "dist/img/default-150x150.png";
+                        $name = "";
+                        $email = "";
+                        $address = "";
+
+                        if (Auth::user()) {
+
+                        $profile = "user_profile/".Auth::user()->profile_photo_path;
+                        $name = Auth::user()->name;
+                        $email = Auth::user()->email;
+                        $address = Auth::user()->home_address;
+                        };
+
+                        @endphp
+
+                        <input id="file" name="file" type="file" onchange="loadFile(event)" style=" opacity: 0; " />
+
+                        <img src="{{ asset("$profile") }}" id="output" width="200" />
+
+                    </div>
+
+                    <center>
+
+                        <!-- <img src="{{ asset("user_profile/$profile") }}" name="aboutme" width="140" height="140" border="0" class="img-circle"></a> -->
+                        <h3 class="media-heading">{{ $name }}</h3>
+                        <span><strong>Email Address: </strong></span>
+                        <!-- <span class="label label-warning">HTML5/CSS</span> -->
+                        <span class="label label-success">{{ $email }}</span>
+                        <!-- <span class="label label-info">Microsoft Office</span> -->
+                        <!-- <span class="label label-success">Windows XP, Vista, 7</span> -->
+                    </center>
+                    <hr>
+                    <center>
+                        <p class="text-left"><strong>Home Address: </strong><br>
+                            {{ $address }}.
+                        </p>
+                        <br>
+                    </center>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Edit Profile</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- //Modal3 -->
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var loadFile = function(event) {
+                var image = document.getElementById('output');
+                image.src = URL.createObjectURL(event.target.files[0]);
+            };
+        });
+
+        function loadFile(event) {
+
+            var image = document.getElementById('output');
+            image.src = URL.createObjectURL(event.target.files[0]);
+
+
+
+            let id = <?php if (auth()->user()) echo auth()->user()->id; ?>;
+
+            var formData = new FormData();
+            formData.append('id', id);
+            formData.append('file', event.target.files[0]);
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: "{{ route('profile.save') }}",
+                type: "POST",
+                dataType: 'json',
+                processData: false,
+                cache: false,
+                contentType: false,
+                data: formData,
+                success: function(response) {
+                    console.log(response);
+
+                },
+            });
+        }
+    </script>
     @include('app.vue.header')
 
     @include('app.vue.login')
@@ -474,6 +637,7 @@
     @yield('content')
 
     @include('app.footer')
+
 </body>
 
 </html>

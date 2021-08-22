@@ -41,8 +41,8 @@
                             <div class="form-group row">
                                 <label for="menu_id" class="col-sm-2 col-form-label">Menu Main</label>
                                 <div class="col-sm-10">
-                                    <select name="menu_id" id="menu_id" class="form-control">
-                                        <option selected disabled="" value="0">- Please Choose... -</option>
+                                    <select name="menu_id[]" id="menu_id[]" class="form-control js-example-basic-multiple" multiple="multiple">
+                                       
                                         @foreach ($menu as $item)
                                             <option value="{{ $item->id }}">{{ $item->menu_name }}</option>
                                         @endforeach
@@ -73,13 +73,12 @@
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-@stop
+    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+    
 
-
-@section('script')
     <script>
         $(document).ready(function() {
-
+            $('.js-example-basic-multiple').select2();
         });
 
     </script>

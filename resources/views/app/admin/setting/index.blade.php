@@ -86,9 +86,9 @@
                                         foreach ($menu as $key => $value) { ?>
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
-                                            <td>{{ $value->menu_name }}</td>
+                                            <td>{{ $value->menu_name }} @if($value->flagAddSub)  <p style="color: red; font-weight: bold; font-size:9px;">(Please Add Sub Menu to spectify categories and Active menu)</p>  @endif</td>
                                             <td>
-                                                @if ($value->status == 'Y')
+                                                @if ($value->status == 'Y' && !$value->flagAddSub )
                                                     <span style="color: green; font-weight: bold;">Active</span>
                                                 @else
                                                     <span style="color: red; font-weight: bold;">In Active</span>

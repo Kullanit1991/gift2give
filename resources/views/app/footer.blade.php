@@ -100,10 +100,10 @@
                 </form>
             </div> --}}
 
-            <div class="clearfix"></div>
-        </div>
-        <p class="copy-right">&copy 2021 Gifts2Gives. All rights reserved | Design by <a href="#">ISCreation</a></p>
+        <div class="clearfix"></div>
     </div>
+    <p class="copy-right">&copy 2021 Gifts2Gives. All rights reserved | Design by <a href="#">ISCreation</a></p>
+</div>
 </div>
 <!-- //footer -->
 
@@ -112,8 +112,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-info">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body modal-spa">
                 <div class="login-grids">
@@ -123,19 +122,16 @@
                             <form>
                                 <div class="sign-up">
                                     <h4>Email :</h4>
-                                    <input type="text" value="Type here" onfocus="this.value = '';"
-                                        onblur="if (this.value == '') {this.value = 'Type here';}" required="">
+                                    <input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">
                                 </div>
                                 <div class="sign-up">
                                     <h4>Password :</h4>
-                                    <input type="password" value="Password" onfocus="this.value = '';"
-                                        onblur="if (this.value == '') {this.value = 'Password';}" required="">
+                                    <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
 
                                 </div>
                                 <div class="sign-up">
                                     <h4>Re-type Password :</h4>
-                                    <input type="password" value="Password" onfocus="this.value = '';"
-                                        onblur="if (this.value == '') {this.value = 'Password';}" required="">
+                                    <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
 
                                 </div>
                                 <div class="sign-up">
@@ -149,13 +145,11 @@
                             <form>
                                 <div class="sign-in">
                                     <h4>Email :</h4>
-                                    <input type="text" value="Type here" onfocus="this.value = '';"
-                                        onblur="if (this.value == '') {this.value = 'Type here';}" required="">
+                                    <input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">
                                 </div>
                                 <div class="sign-in">
                                     <h4>Password :</h4>
-                                    <input type="password" value="Password" onfocus="this.value = '';"
-                                        onblur="if (this.value == '') {this.value = 'Password';}" required="">
+                                    <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
                                     <a href="#">Forgot password?</a>
                                 </div>
                                 <div class="single-bottom">
@@ -202,7 +196,6 @@
             }
         });
     });
-
 </script>
 <script src="{{ asset('js/modernizr.custom.js') }}"></script>
 <!-- Custom-JavaScript-File-Links -->
@@ -217,7 +210,6 @@
     if (~window.location.search.indexOf('reset=true')) {
         paypal.minicart.reset();
     }
-
 </script>
 
 <!-- //cart-js -->
@@ -244,7 +236,6 @@
             fit: true
         });
     });
-
 </script>
 <!-- //script for responsive tabs -->
 <!-- stats -->
@@ -252,7 +243,6 @@
 <script src="{{ asset('js/jquery.countup.js') }}"></script>
 <script>
     $('.counter').countUp();
-
 </script>
 <!-- //stats -->
 
@@ -273,7 +263,6 @@
             "values", 1));
 
     }); //]]>  
-
 </script>
 <script type="text/javascript" src="{{ asset('js/jquery-ui.js') }}"></script>
 <!---->
@@ -288,16 +277,55 @@
             controlNav: "thumbnails"
         });
     });
-
 </script>
 <!-- //FlexSlider-->
+
+<script type="text/javascript">
+        $(document).ready(function() {
+            var loadFile = function(event) {
+                var image = document.getElementById('output');
+                image.src = URL.createObjectURL(event.target.files[0]);
+            };
+        });
+
+        function loadFile(event) {
+
+            var image = document.getElementById('output');
+            image.src = URL.createObjectURL(event.target.files[0]);
+
+
+
+            let id = <?php if (auth()->user()) echo auth()->user()->id; ?>;
+
+            var formData = new FormData();
+            formData.append('id', id);
+            formData.append('file', event.target.files[0]);
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: "{{ route('profile.save') }}",
+                type: "POST",
+                dataType: 'json',
+                processData: false,
+                cache: false,
+                contentType: false,
+                data: formData,
+                success: function(response) {
+                    console.log(response);
+
+                },
+            });
+        }
+    </script>
 
 
 <!-- start-smoth-scrolling -->
 <script type="text/javascript" src="{{ asset('js/bootstrap-select-country.min') }}"></script>
 <script type="text/javascript" src="{{ asset('js/move-top.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/jquery.easing.min.js') }}"></script>
-<script type="text/javascript">
+<<script type="text/javascript">
     jQuery(document).ready(function($) {
         $(".scroll").click(function(event) {
             event.preventDefault();
@@ -306,7 +334,6 @@
             }, 1000);
         });
     });
-
 </script>
 <!-- here stars scrolling icon -->
 <script type="text/javascript">
@@ -325,7 +352,6 @@
         });
 
     });
-
 </script>
 <!-- //here ends scrolling icon -->
 

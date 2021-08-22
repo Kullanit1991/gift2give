@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
-
+    <!-- Select Multiple Option  -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     @yield('style')
 
@@ -167,7 +167,7 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="">
+                        <img src="{{ asset('dist/img/admin_profile.png') }}" class="img-circle elevation-2" alt="">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">Super Admin</a>
@@ -827,7 +827,8 @@
 
     <!-- PAGE SCRIPTS -->
     <script src="{{ asset('dist/js/pages/dashboard2.js') }}"></script>
-    
+    <!-- select multiple option -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 </body>
 

@@ -15,6 +15,14 @@ class MenuManagement extends Controller
 
         $menu = Menu::get();
 
+        foreach ($menu as $item ) {
+            $result = SubMenu::where('sub_menus.menu_group_id',$item->id)->get();
+         
+            if (count($result) == 0 ) {
+                $item->flagAddSub = true;
+            }
+        }
+     
         $submenu = SubMenu::join('menus','sub_menus.menu_group_id','menus.id')->paginate(5);
 
         return view('app.admin.setting.index', ['menu' => $menu, 'submenu'=> $submenu]);
@@ -34,6 +42,10 @@ class MenuManagement extends Controller
 
     public function store(Request $request)
     {
+
+        $request->validate([
+            'name' => 'required',
+            ]);
      
         $menu = Menu::create([
             'menu_name' => $request->name,
@@ -46,14 +58,21 @@ class MenuManagement extends Controller
 
     public function storeSubmenu(Request $request)
     {
- 
-        $menu = SubMenu::create([
-            'submenu_name' => $request->sub_name,
-            'menu_group_id' => $request->menu_id,
-            'status' => 'Y',
-        ]);
+        $request->validate([
+            'sub_name' => 'required',
+            'menu_id'=> 'required'
+            ]);
+     
+        foreach ($request->menu_id as $id) {
+            $menu = SubMenu::create([
+                'submenu_name' => $request->sub_name,
+                'menu_group_id' => $id,
+                'status' => 'Y',
+            ]);
+        }
+       
         $menu = Menu::get();
-        $submenu = SubMenu::join('menus','sub_menus.menu_group_id','menus.id')->get();
+        $submenu = SubMenu::join('menus','sub_menus.menu_group_id','menus.id')->orderBy('sub_menus.menu_group_id', 'desc')->get();
 
         return redirect()->route('setting.menu');
     }

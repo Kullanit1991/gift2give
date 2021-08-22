@@ -9,7 +9,7 @@
 
 @section('content')
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+    <div class="content-wrapper" id="userVue">
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
@@ -57,7 +57,10 @@
                                             <span style="color: red; font-weight: bold;">In Active</span>
                                         @endif
                                     </td>
-                                    <td><button type="button" class="btn btn-secondary">Edit</button></td>
+                                    <td width="120px">
+                                        <button type="button" class="btn" @click="viewItem({{$value->id}})"><i class="fas fa-eye"></i></button>
+                                        <button type="button" class="btn" @click="editItem({{$value->id}})"><i class="fas fa-edit"></i></button>
+                                    </td>
                                 </tr>
                                 <?php } ?>
                             </tbody>
@@ -76,6 +79,8 @@
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
+
+@include('app.vue.admin.user-manange')
 @stop
 @section('script')
     <script>

@@ -56,7 +56,7 @@ return [
         'string' => 'The :attribute must be greater than or equal :value characters.',
         'array' => 'The :attribute must have :value items or more.',
     ],
-    'image' => 'The :attribute must be an image.',
+    'image' => ':attribute ต้องเป็นรูปเท่านั้น.',
     'in' => 'The selected :attribute is invalid.',
     'in_array' => 'The :attribute field does not exist in :other.',
     'integer' => 'The :attribute must be an integer.',
@@ -96,7 +96,7 @@ return [
     'password' => 'The password is incorrect.',
     'present' => 'The :attribute field must be present.',
     'regex' => 'The :attribute format is invalid.',
-    'required' => 'The :attribute field is required.',
+    'required' => 'กรุณากรอก :attribute ให้ถูกต้อง.',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',
     'required_with' => 'The :attribute field is required when :values is present.',
@@ -147,12 +147,12 @@ return [
     */
 
     'attributes' => [
-        'email' => 'E-Mail Address',
-        'name' => 'Name',
-        'title' => 'Title',
-        'picture' => 'Image Slide',
-        'profile' => 'Profile Image',
-        'address' => 'Address'
+        'email' => 'อีเมลล์',
+        'name' => 'ชื่อ',
+        'title' => 'หัวข้อ',
+        'picture' => 'รูปสไลด์',
+        'profile' => 'รูปโปรไฟล์',
+        'address' => 'ที่อยู่'
     ],
 
 ];

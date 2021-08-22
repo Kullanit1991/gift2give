@@ -21,7 +21,7 @@
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ url('/admin') }}">Home</a></li>
                             <li class="breadcrumb-item active">User Management</li>
-                            <li class="breadcrumb-item active">Edit User</li>
+                            <li class="breadcrumb-item active">View User</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -34,16 +34,13 @@
             <div class="container-fluid">
                 <div class="card text-center">
                     <div class="card-body">
-                            <form action="{{ route('setting-user.store') }}" method="POST" enctype="multipart/form-data">
-                                @csrf
+                        
                                 <input type="hidden" class="form-control" id="id" value="{{$user->id}}" name="id" >
                                 <div class="form-group row">
                                     <label for="title" class="col-sm-2 col-form-label">Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="name" value="{{$user->name}}" name="name" placeholder="name">
-                                        @error('name')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                        @enderror
+                                        <input type="text" class="form-control" id="name" value="{{$user->name}}" name="name" placeholder="name" disabled>
+                                    
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -55,24 +52,13 @@
                                 <div class="form-group row">
                                     <label for="subtitle" class="col-sm-2 col-form-label">Address</label>
                                     <div class="col-sm-10">
-                                        <textarea  class="form-control" id="address" name="address" placeholder="Address">{{$user->home_address}}</textarea>
-                                        @error('address')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                         @enderror
+                                        <textarea  class="form-control" id="address" name="address" placeholder="Address" disabled>{{$user->home_address}}</textarea>
+                                  
                                     </div>
                                 </div>
+  
                                 <div class="form-group row">
-                                    <label for="inputEmail" class="col-sm-3 col-form-label">Profile Image (only 500MB)</label>
-                                    <div class="col-sm-9">
-                                        <input type="file" class="form-control" id="profile" name="profile" onchange="loadPreview(this);">
-                                        
-                                        @error('profile')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                         @enderror
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail" class="col-sm-2 col-form-label">Preview Image</label>
+                                    <label for="inputEmail" class="col-sm-2 col-form-label">Your Profile Image</label>
                                     <div class="col-sm-10 text-left">
                                        @if ($user->profile_photo_path != null)
                                         <img id="preview_img" src="{{ asset("user_profile/$user->profile_photo_path") }}" width="50%" />
@@ -84,12 +70,10 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-10 offset-sm-2">
-                                        <button type="submit" class="btn btn-primary">save</button>
-                                        <a href="{{ url('/setting-user') }}" class="btn btn-secondary">cancel</a>
+                                        <a href="{{ url('/setting-user') }}" class="btn btn-secondary">Back</a>
                                     </div>
 
                                 </div>
-                            </form>
 
                     </div>
                 </div>

@@ -38,7 +38,7 @@ class ScreenSetUpController extends Controller
         $request->validate([
             'title' => 'required',
             'subtitle' => 'required',
-            'picture' => 'required|image|mimes:jpeg,png,jpg',
+            'picture' => 'required|image|mimes:jpeg,png,jpg|dimensions:min_width=820,min_height=312,max_width=1680,max_height=700',
             ]);
     
             $imageName = time().'.'.$request->picture->extension();  

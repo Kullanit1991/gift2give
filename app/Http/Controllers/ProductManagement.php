@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Product;
+use App\Models\Menu;
 use App\Models\SubMenu;
 
 class ProductManagement extends Controller
@@ -19,6 +20,7 @@ class ProductManagement extends Controller
 
     public function create()
     {
+
         $submenu = SubMenu::join('menus','sub_menus.menu_group_id','menus.id')
                    ->select('sub_menus.*', 'menus.menu_name')
                    ->get();
